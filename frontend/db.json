@@ -1,7 +1,7 @@
 {
     "users": [
         {
-            "id": 1,
+            "id": "1",
             "customer_name": "Fey Feldbaum",
             "customer_email": "ffeldbaum0@nhs.uk",
             "customer_phone": "7277824855",
@@ -17,7 +17,7 @@
             "electric_car": true
         },
         {
-            "id": 2,
+            "id": "2",
             "customer_name": "Fey Feldbaum",
             "customer_email": "ffeldbaum0@nhs.uk",
             "customer_phone": "7277824855",
@@ -33,7 +33,7 @@
             "electric_car": true
         },
         {
-            "id": 6,
+            "id": "3",
             "customer_name": "Reynard Eddins",
             "customer_email": "reddins1@cornell.edu",
             "customer_phone": "6164239418",
@@ -49,7 +49,7 @@
             "electric_car": false
         },
         {
-            "id": 1,
+            "id": "4",
             "customer_name": "Anatollo Hardingham",
             "customer_email": "ahardingham2@google.cn",
             "customer_phone": "8599978787",
@@ -65,7 +65,7 @@
             "electric_car": true
         },
         {
-            "id": 7,
+            "id": "5",
             "customer_name": "Gran Gumby",
             "customer_email": "ggumby3@techcrunch.com",
             "customer_phone": "3055398957",
@@ -81,7 +81,7 @@
             "electric_car": false
         },
         {
-            "id": 3,
+            "id": "6",
             "customer_name": "Kathie Shankland",
             "customer_email": "kshankland4@hao123.com",
             "customer_phone": "2967544838",
@@ -97,7 +97,7 @@
             "electric_car": true
         },
         {
-            "id": 8,
+            "id": "7",
             "customer_name": "Roxine Pitsall",
             "customer_email": "rpitsall5@cmu.edu",
             "customer_phone": "3082057626",
@@ -113,7 +113,7 @@
             "electric_car": false
         },
         {
-            "id": 9,
+            "id": "8",
             "customer_name": "Reeta Bedboro",
             "customer_email": "rbedboro6@pcworld.com",
             "customer_phone": "2386516346",
@@ -129,7 +129,7 @@
             "electric_car": false
         },
         {
-            "id": 2,
+            "id": "9",
             "customer_name": "Fredrick Armsden",
             "customer_email": "farmsden7@uiuc.edu",
             "customer_phone": "6462237057",
@@ -145,7 +145,7 @@
             "electric_car": false
         },
         {
-            "id": 7,
+            "id": "10",
             "customer_name": "Madeline Senior",
             "customer_email": "msenior8@hexun.com",
             "customer_phone": "4465940406",
@@ -161,7 +161,7 @@
             "electric_car": false
         },
         {
-            "id": 5,
+            "id": "11",
             "customer_name": "Vidovik Starford",
             "customer_email": "vstarford9@jalbum.net",
             "customer_phone": "6946934960",
@@ -176,10 +176,7 @@
             "members": 98,
             "electric_car": false
         }
-    ]
-}
-
-    {
+    ],
     "plans": [
         {
             "id": 1,
@@ -188,8 +185,255 @@
             "descriptionLong": "Plan particular para clientes particulares",
             "benefits": "Descuento del 10% en la factura",
             "minDurationInmonths": 6,
-            "powerMinPrice": 0.1,
-            "powerMaxPrice": 0.2,
+            "powerMinPrice": 0.109420,
+            "powerMaxPrice": 0.115678
         },
+        {
+            "id": 2,
+            "title": "Plan empresas",
+            "descriptionShort": "Plan para todo tipo de empreas",
+            "descriptionLong": "Plan de Implementación Integral de Sistemas de Energía Solar Fotovoltaica para Empresas: Optimización Energética y Sostenibilidad Empresarial",
+            "benefits": "Descuento del 20% en la factura",
+            "minDurationInmonths": 6,
+            "powerMinPrice": 0.12765,
+            "powerMaxPrice": 0.2
+        }
+    ],
+    "invoice": [
+        {
+            "id": "1",
+            "numberCode": "00001",
+            "price": "23,40",
+            "emitDate": "25/11/2023",
+            "startDate": "01/10/2023",
+            "endDate": "02/11/2023",
+            "contract": 1
+        },
+        {
+            "id": "2",
+            "numberCode": "00002",
+            "price": "22,50",
+            "emitDate": "25/11/2023",
+            "startDate": "01/10/2023",
+            "endDate": "02/11/2023",
+            "contract": 2
+        },
+        {
+            "id": "3",
+            "numberCode": "00003",
+            "price": "23,50",
+            "emitDate": "25/11/2023",
+            "startDate": "01/10/2023",
+            "endDate": "02/11/2023",
+            "contract": 3
+        },
+        {
+            "id": "4",
+            "numberCode": "00004",
+            "price": "21,60",
+            "emitDate": "25/11/2023",
+            "startDate": "01/10/2023",
+            "endDate": "02/11/2023",
+            "contract": 4
+        },
+        {
+            "id": "5",
+            "numberCode": "00005",
+            "price": "20,90",
+            "emitDate": "25/11/2023",
+            "startDate": "01/10/2023",
+            "endDate": "02/11/2023",
+            "contract": 5
+        },
+        {
+            "id": "6",
+            "numberCode": "00006",
+            "price": "27,90",
+            "emitDate": "25/11/2023",
+            "startDate": "01/10/2023",
+            "endDate": "02/11/2023",
+            "contract": 6
+        },
+        {
+            "id": "7",
+            "numberCode": "00007",
+            "price": "23,90",
+            "emitDate": "25/11/2023",
+            "startDate": "01/10/2023",
+            "endDate": "02/11/2023",
+            "contract": 7
+        },
+        {
+            "id": "8",
+            "numberCode": "00008",
+            "price": "21,90",
+            "emitDate": "25/11/2023",
+            "startDate": "01/10/2023",
+            "endDate": "02/11/2023",
+            "contract": 8
+        },
+        {
+            "id": "9",
+            "numberCode": "00009",
+            "price": "19,90",
+            "emitDate": "25/11/2023",
+            "startDate": "01/10/2023",
+            "endDate": "02/11/2023",
+            "contract": 9
+        },
+        {
+            "id": "10",
+            "numberCode": "00010",
+            "price": "25,90",
+            "emitDate": "25/11/2023",
+            "startDate": "01/10/2023",
+            "endDate": "02/11/2023",
+            "contract": 10
+        },
+        {
+            "id": "11",
+            "numberCode": "00011",
+            "price": "20,90",
+            "emitDate": "25/11/2023",
+            "startDate": "01/10/2023",
+            "endDate": "02/11/2023",
+            "contract": 11
+        }
+    ],
+    "contract": [
+        {
+            "id": 1,
+            "duration": 1,
+            "discount": 0.10,
+            "startDate": "23/04/023",
+            "endDate": "23/04/2024",
+            "bankAccountNumber": 20858079820330276543,
+            "paymentFrequency": 3,
+            "active": true,
+            "user": 1,
+            "plan": 1
+        },
+        {
+            "id": 2,
+            "duration": 2,
+            "discount": 0.10,
+            "startDate": "23/04/023",
+            "endDate": "23/04/2025",
+            "bankAccountNumber": 20868070820343277843,
+            "paymentFrequency": 1,
+            "active": false,
+            "user": 2,
+            "plan": 1
+        },
+        {
+            "id": 3,
+            "duration": 1,
+            "discount": 0.20,
+            "startDate": "23/04/023",
+            "endDate": "23/04/2024",
+            "bankAccountNumber": 20968170820343256847,
+            "paymentFrequency": 2,
+            "active": true,
+            "user": 3,
+            "plan": 2
+        },
+        {
+            "id": 4,
+            "duration": 1,
+            "discount": 0.10,
+            "startDate": "23/04/023",
+            "endDate": "23/04/2024",
+            "bankAccountNumber": 20962370820343289846,
+            "paymentFrequency": 3,
+            "active": true,
+            "user": 4,
+            "plan": 1
+        },
+        {
+            "id": 5,
+            "duration": 2,
+            "discount": 0.10,
+            "startDate": "23/04/023",
+            "endDate": "23/04/2025",
+            "bankAccountNumber": 20909370820343288846,
+            "paymentFrequency": 3,
+            "active": true,
+            "user": 5,
+            "plan": 1
+        },
+        {
+            "id": 6,
+            "duration": 1,
+            "discount": 0.20,
+            "startDate": "23/04/023",
+            "endDate": "23/04/2024",
+            "bankAccountNumber": 20968770820344489876,
+            "paymentFrequency": 6,
+            "active": true,
+            "user": 6,
+            "plan": 2
+        },
+        {
+            "id": 7,
+            "duration": 2,
+            "discount": 0.10,
+            "startDate": "23/04/023",
+            "endDate": "23/04/2025",
+            "bankAccountNumber": 20969970820343079864,
+            "paymentFrequency": 1,
+            "active": false,
+            "user": 7,
+            "plan": 1
+        },
+        {
+            "id": 8,
+            "duration": 2,
+            "discount": 0.20,
+            "startDate": "23/04/023",
+            "endDate": "23/04/2025",
+            "bankAccountNumber": 20962398820347889843,
+            "paymentFrequency": 3,
+            "active": true,
+            "user": 8,
+            "plan": 2
+        },
+        {
+            "id": 9,
+            "duration": 1,
+            "discount": 0.20,
+            "startDate": "23/04/023",
+            "endDate": "23/04/2024",
+            "bankAccountNumber": 20988370820343289874,
+            "paymentFrequency": 3,
+            "active": true,
+            "user": 9,
+            "plan": 2
+        },
+        {
+            "id": 10,
+            "duration": 1,
+            "discount": 0.20,
+            "startDate": "23/04/023",
+            "endDate": "23/04/2024",
+            "bankAccountNumber": 20998370820345489887,
+            "paymentFrequency": 3,
+            "active": true,
+            "user": 10,
+            "plan": 2
+        },
+        {
+            "id": 11,
+            "duration": 2,
+            "discount": 0.10,
+            "startDate": "23/04/023",
+            "endDate": "23/04/2025",
+            "bankAccountNumber": 20962370820387289880,
+            "paymentFrequency": 3,
+            "active": true,
+            "user": 11,
+            "plan": 1
+        }
     ]
 }
+
+    
