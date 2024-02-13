@@ -1,14 +1,21 @@
 export interface User {
     id: number;
 
-    fullName: string;
-    email: string; // sirve para login
-    phone: string;
+    customer_name: string;
+    customer_email: string; // sirve para login
+    customer_phone: string;
     nif: string;
     password: string, // sirve para login
 
-    street: string;
-    city: string;
-    postalCode: string;
+    installation_addres: string;
+    installation_city: string;
+    postal_code: string;
+    contrat_date: string;
+    account_number: number;
+    m2: number;
+    members: number;
+    electric_car: boolean;
+    
+   
 
 }
