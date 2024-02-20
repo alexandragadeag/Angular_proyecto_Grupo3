@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { UserListComponent } from "./user-list/user-list.component";
 
 @Component({
@@ -7,7 +7,7 @@ import { UserListComponent } from "./user-list/user-list.component";
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, UserListComponent]
+    imports: [RouterOutlet, UserListComponent, RouterLink]
 })
 export class AppComponent {
   title = 'frontend';
