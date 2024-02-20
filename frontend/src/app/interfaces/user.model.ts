@@ -3,14 +3,12 @@ export interface User {
 
     customer_name: string;
     customer_email: string; // sirve para login
-    customer_phone: string;
-    nif: string;
     password: string, // sirve para login
-
+    customer_phone: string;
+    nif/cif: string;
     installation_addres: string;
     installation_city: string;
-    postal_code: string;
-    contrat_date: string;
+    postal_code: number;
     account_number: number;
     m2: number;
     members: number;
