@@ -5,4 +5,5 @@ import { UserListComponent } from './user-list/user-list.component';
 export const route: Routes = [
     { path: '', component: HomeComponent },
     { path: 'users', component: UserListComponent }
+    
 ];
