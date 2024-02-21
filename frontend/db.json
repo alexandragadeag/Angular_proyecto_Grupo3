@@ -1,4 +1,5 @@
-[
+{
+    "users": [
     {
         "id": 1,
         "customer_name": "Alexandros Jackes",
@@ -150,3 +151,4 @@
         "electric_cae": false
     }
 ]
+}
