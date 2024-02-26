@@ -9,3 +9,15 @@
 h1 {
     font-family: 'conthrax', 'arial', sans-serif;
 }
+
+.btn-purple {
+  color: #fff;
+  background-color: #9b30ff; /* Púrpura más claro */
+  border-color: #9b30ff; /* Púrpura más claro */
+}
+
+.btn-purple:hover {
+  color: #fff;
+  background-color: #7e1fcd; /* Púrpura más claro al pasar el ratón */
+  border-color: #7e1fcd; /* Púrpura más claro al pasar el ratón */
+}
