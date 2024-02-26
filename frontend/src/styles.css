@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+@font-face {
+    font-family: conthrax;
+    src: url(/assets/font/conthrax-sb.otf) format("opentype");
+  }
+
+h1 {
+    font-family: 'conthrax', 'arial', sans-serif;
+}
