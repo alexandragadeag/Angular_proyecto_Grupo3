@@ -2,12 +2,18 @@
 
 
 @font-face {
-    font-family: conthrax;
-    src: url(/assets/font/conthrax-sb.otf) format("opentype");
+    font-family: 'Conthrax';
+    src: url('./assets/fonts/conthrax-sb.otf') format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
   }
 
 h1 {
     font-family: 'conthrax', 'arial', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 .btn-purple {
