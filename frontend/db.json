@@ -13,7 +13,7 @@
             "account_number": "501877732710294153",
             "m2": 13,
             "members": 92,
-            "electric_cae": false
+            "electric_car": false
         },
         {
             "id": 2,
@@ -28,7 +28,7 @@
             "account_number": "201786896078095",
             "m2": 75,
             "members": 81,
-            "electric_cae": false
+            "electric_car": false
         },
         {
             "id": 3,
@@ -43,7 +43,7 @@
             "account_number": "3588861008749391",
             "m2": 28,
             "members": 35,
-            "electric_cae": false
+            "electric_car": false
         },
         {
             "id": 4,
@@ -58,7 +58,7 @@
             "account_number": "3558633237927890",
             "m2": 90,
             "members": 46,
-            "electric_cae": false
+            "electric_car": false
         },
         {
             "id": 5,
@@ -73,7 +73,7 @@
             "account_number": "5610989744154365",
             "m2": 96,
             "members": 79,
-            "electric_cae": true
+            "electric_car": true
         },
         {
             "id": 6,
@@ -88,7 +88,7 @@
             "account_number": "4792148098534",
             "m2": 29,
             "members": 5,
-            "electric_cae": true
+            "electric_car": true
         },
         {
             "id": 7,
@@ -103,7 +103,7 @@
             "account_number": "3587561325502454",
             "m2": 78,
             "members": 32,
-            "electric_cae": true
+            "electric_car": true
         },
         {
             "id": 8,
@@ -118,7 +118,7 @@
             "account_number": "633306282334742999",
             "m2": 44,
             "members": 58,
-            "electric_cae": false
+            "electric_car": false
         },
         {
             "id": 9,
@@ -133,7 +133,7 @@
             "account_number": "3552456507663292",
             "m2": 60,
             "members": 82,
-            "electric_cae": false
+            "electric_car": false
         },
         {
             "id": 10,
@@ -148,7 +148,7 @@
             "account_number": "5319480837996254",
             "m2": 81,
             "members": 57,
-            "electric_cae": false
+            "electric_car": false
         }
     ],
     "plans": [
