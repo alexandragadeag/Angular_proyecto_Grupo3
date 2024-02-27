@@ -1,4 +1,13 @@
+.picsum-img-wrapper {
+    margin-top: 10px; /* ajustar este valor según nuestro diseño */
+}
+
+.picsum-img-wrapper {
+    margin-bottom: 20px; /* ajustar este valor según nuestro diseño */
+}
+
 .picsum-img-wrapper img {
     width: 100%;
     height: auto;
+    max-height: 80vh; /* ajustar este valor según nuestras necesidades */
 }
