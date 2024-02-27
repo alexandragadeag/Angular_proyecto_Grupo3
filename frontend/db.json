@@ -154,8 +154,8 @@
     "plans": [
                 {
                     "id": 1,
-                    "descriptionLong": "Plan particular para clientes particulares",
-                    "benefits": "Descuento del 10% en la factura",
+                    "descriptionLong": "Plan para clientes particulares",
+                    "benefits": "Descuento del 30% en la factura",
                     "minDurationInmonths": 6,
                     "powerMinPrice": 0.1,
                     "powerMaxPrice": 0.2
