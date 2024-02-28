@@ -2,8 +2,8 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 	<div class="container-fluid">
 		<a class="navbar-brand" routerLink="/">
-      <img style="max-width:100px;" src="/assets/img/logosinfondo.png" alt="logo">
-    </a>
+      		<img style="max-width:100px;" src="/assets/img/logosinfondo.png" alt="logo">
+    	</a>
 		<button
 			class="navbar-toggler"
 			type="button"
@@ -17,40 +17,38 @@
 
 		<div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
 			<ul class="navbar-nav ms-auto">
-				<li class="nav-item" ngbDropdown>
-					<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button"> Planes </a>
-					<div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
-						<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Planes eléctricos</a>
-						<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Another action</a>
-						<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Something else here</a>
-					</div>
+				<li class="nav-item">
+					<a class="nav-link" routerLink="/planes">Planes</a>
 				</li>
 
-				<li class="nav-item" ngbDropdown>
-					<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown2" role="button"> Static right </a>
-					<div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-end">
-						<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Action</a>
-						<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Another action</a>
-						<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Something else here</a>
-					</div>
+				<li class="nav-item">
+					<a class="nav-link" routerLink="/static-right">Conócenos</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" routerLink="/dynamic">Contacto</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" routerLink="/dynamic">Área donación</a>
 				</li>
 
 				<li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
-					<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button"> Dynamic </a>
+					<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button"> Productos </a>
 					<div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
-						<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Action</a>
-						<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Another action</a>
-						<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Something else here</a>
+						<a ngbDropdownItem routerLink="/categories" (click)="$event.preventDefault()">Producto 1</a>
+						<a ngbDropdownItem routerLink="/categories/create" (click)="$event.preventDefault()">Producto 2</a>
 					</div>
 				</li>
+
 			</ul>
 
-      <button type="button" class="btn btn-purple">Iniciar Sesión</button>
+      		<button type="button" class="btn btn-purple ms-3">Registrarse</button>
+			<button type="button" class="btn btn-purple ms-3">Inciar sesión</button>
 
 		</div>
 	</div>
 </nav>
-
 
 <div style="min-height:600px;">
   <router-outlet></router-outlet>
