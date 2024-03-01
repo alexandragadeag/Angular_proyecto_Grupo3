@@ -1,11 +1,11 @@
 import { HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-plan-detail',
   standalone: true,
-  imports: [PlanDetailComponent, HttpClientModule, RouterLink,],
+  providers: [],
   templateUrl: './plan-detail.component.html',
   styleUrl: './plan-detail.component.css'
 })
@@ -36,4 +36,8 @@ const plan2 =
   minDurationInMonths: 12,
   powerMinPrice: 0.089,
   powerMaxPrice: 0.089,
+}
+
+function Component(arg0: { selector: string; standalone: boolean; providers: never[]; templateUrl: string; styleUrl: string; }): (target: typeof PlanDetailComponent) => void | typeof PlanDetailComponent {
+  throw new Error('Function not implemented.');
 }

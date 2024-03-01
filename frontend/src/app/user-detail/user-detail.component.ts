@@ -7,7 +7,7 @@ import { User } from '../interfaces/user.model';
 @Component({
   selector: 'app-user-detail',
   standalone: true,
-  imports: [],
+  providers: [],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.css'
 })
@@ -19,7 +19,7 @@ export class UserDetailComponent implements OnInit {
     
   ngOnInit(): void {
 
-    this.activatedRoute.params.subscribe(params => {
+    this.activatedRoute.params.subscribe((params: { [x: string]: any; }) => {
       console.log(params['id']);
 let idString = params['id'];
 console.log('id', idString, 10);
@@ -44,7 +44,8 @@ this.user = {
      
     }
 
-
+    );
 }
 
 
+}
