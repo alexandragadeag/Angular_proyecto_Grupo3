@@ -1,6 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Register } from '../interfaces/register.model';
 
 @Component({
@@ -13,14 +13,28 @@ import { Register } from '../interfaces/register.model';
 export class RegisterComponent {
 
   registerForm = this.fb.group({
-    nickname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
-    email: ['', [Validators.required, Validators.email]],
-    phone: [''],
-    password: ['']
-   });
+   nickname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
+   email: ['', [Validators.required, Validators.email]],
+   phone: ['', [Validators.required, Validators.pattern('^[0-9]{9}$')]],
+   password: ['',[Validators.required]],
+   passwordConfirm: ['', [Validators.required]]
+  },
+  {validators: this.passwordConfirmValidator}
+  );
+
    constructor(private fb: FormBuilder,
      private httpClient: HttpClient) {}
- 
+
+     passwordConfirmValidator(control: AbstractControl){
+      if(control.get('password')?.value === control.get('passwordConfirm')?.value){
+      return null; // si coinciden, son iguales y por tanto no hay error.
+      } else {
+      return {
+      'confirmError': true // si son distintas se devuelve error true
+         }
+       }
+      }
+      
    save(){
  
      let register: Register = {
