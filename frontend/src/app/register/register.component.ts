@@ -1,6 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Register } from '../interfaces/register.model';
 
 @Component({
@@ -13,8 +13,8 @@ import { Register } from '../interfaces/register.model';
 export class RegisterComponent {
 
   registerForm = this.fb.group({
-    nickname: [''],
-    email: [''],
+    nickname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
+    email: ['', [Validators.required, Validators.email]],
     phone: [''],
     password: ['']
    });
