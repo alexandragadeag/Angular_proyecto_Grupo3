@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../interfaces/user.model';
 import { ActivatedRoute } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
