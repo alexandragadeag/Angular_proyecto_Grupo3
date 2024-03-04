@@ -1,13 +1,8 @@
-export interface RegisterModel {
+export interface Register {
+    nickname: string;
     email: string;
+    phone: string;
     password: string;
-    confirmPassword: string;
-    firstName: string;
-    lastName: string;
-    address: string;
-    city: string;
-    postalCode: string;
-    phoneNumber: string;
     
 
 }
