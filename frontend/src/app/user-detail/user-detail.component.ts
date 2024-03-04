@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { User } from '../interfaces/user.model';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -19,7 +19,7 @@ export class UserDetailComponent implements OnInit {
     
   ngOnInit(): void {
 
-    this.activatedRoute.params.subscribe((params: { [x: string]: any; }) => {
+    this.route.params.subscribe((params: { [x: string]: any; }) => {
       console.log(params['id']);
 let idString = params['id'];
 console.log('id', idString, 10);
