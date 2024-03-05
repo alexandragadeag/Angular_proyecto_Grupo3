@@ -39,7 +39,7 @@ export class LoginComponent {
                   console.log(res);
 
                   // Redirigir hacia la página home
-                  this.router.navigate(['/product-list']);
+                  this.router.navigate(['/home']);
                 });
 
 
