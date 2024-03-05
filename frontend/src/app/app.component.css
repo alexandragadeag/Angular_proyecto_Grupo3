@@ -1,2 +1,8 @@
 
+.navbar-nav .nav-link {
+    font-size: 18px; /* Tamaño de la fuente deseado */
+}
 
+.footer {
+    font-size: 17px; /* Tamaño de la fuente deseado */
+}
