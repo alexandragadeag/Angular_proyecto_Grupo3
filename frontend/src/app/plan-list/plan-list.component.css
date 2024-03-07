@@ -1,0 +1,13 @@
+.card-with-background-1 {
+    background-image: url('/assets/img/solar_1.jpg'); /* Reemplaza 'ruta/a/imagen-1.jpg' con la ruta de tu primera imagen */
+    background-size: cover;
+    background-position: center;
+    color: white; /* Cambia el color del texto si es necesario para que se vea bien sobre la imagen */
+  }
+  
+  .card-with-background-2 {
+    background-image: url('/assets/img/solar_2.jpg'); /* Reemplaza 'ruta/a/imagen-2.jpg' con la ruta de tu segunda imagen */
+    background-size: cover;
+    background-position: center;
+    color: white; /* Cambia el color del texto si es necesario para que se vea bien sobre la imagen */
+  }
