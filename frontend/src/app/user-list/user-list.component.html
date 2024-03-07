@@ -10,16 +10,6 @@
             <th scope="col">Id</th>
             <th scope="col">Nombre</th>
             <th scope="col">Email</th>
-            <th scope="col">Password</th>
-            <th scope="col">Teléfono</th>
-            <th scope="col">nif_cif</th>
-            <th scope="col">Dirección</th>
-            <th scope="col">Ciudad</th>
-            <th scope="col">Código Postal</th>
-            <th scope="col">Tarjera bancaria</th>
-            <th scope="col">M2</th>
-            <th scope="col">Miembros</th>
-            <th scope="col">Coche eléctrico</th>
           </tr>
         </thead>
         <tbody>
@@ -28,17 +18,6 @@
             <td>{{user.id}}</td>
             <td>{{user.customer_name}}</td>
             <td>{{user.customer_email}}</td>
-            <td>{{user.password}}</td>
-            <td>{{user.customer_phone }}</td>
-            <td>{{user.nif_cif}}</td>
-            <td>{{user.installation_addres}}</td>
-            <td>{{user.installation_city}}</td>
-            <td>{{user.postal_code}}</td>
-            <td>{{user.account_number}}</td>
-            <td>{{user.m2}}</td>
-            <td>{{user.members}}</td>
-            <td>{{user.electric_car}}</td>
-
             <td>
               <td>
                 <a [routerLink]="['/users', user.id]" class="btn btn-purple">Ver</a>
