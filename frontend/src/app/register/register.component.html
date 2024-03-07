@@ -2,24 +2,6 @@
     <form [formGroup]="registerForm" (ngSubmit)="save">
       <h1 class="h3 mb-3 fw-normal m-4">Crear cuenta</h1>
   
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="nickname" placeholder="alexandra_gadea" formControlName="nickname">
-        <label for="nickname">Nickname</label>
-
-        @if(registerForm.controls.nickname.touched && registerForm.controls.nickname.errors) {
-          <div>
-          @if (registerForm.controls.nickname.errors['required']) {
-          <small class="text-danger">Nickname es obligatorio.</small>
-          }
-          @if (registerForm.controls.nickname.errors['minlength']) {
-          <small class="text-danger">Nickname debe tener longitud >= 3 caracteres.</small>  
-          }
-          @if (registerForm.controls.nickname.errors['maxlength']) {
-          <small class="text-danger">Nickname debe tener longitud <= 15 caracteres.</small>
-          }
-          </div>
-          }
-      </div>
 
       <div class="form-floating mb-3">
         <input type="email" class="form-control" id="email" placeholder="name@example.com" formControlName="email">

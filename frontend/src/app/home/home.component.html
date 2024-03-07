@@ -2,7 +2,7 @@
 	<ngb-carousel>
 		<ng-template ngbSlide>
 			<div class="picsum-img-wrapper">
-				<img src="/assets/img/solar_1.jpg" alt="Random first slide" />
+				<img src="/assets/img/solar_5.jpg" alt="Random first slide" />
 			</div>
 			<div class="carousel-caption">
 				<h3>First slide label</h3>
@@ -11,7 +11,7 @@
 		</ng-template>
 		<ng-template ngbSlide>
 			<div class="picsum-img-wrapper">
-				<img src="/assets/img/solar_2.jpg" alt="Random second slide" />
+				<img src="/assets/img/solar_8.jpg" alt="Random second slide" />
 			</div>
 			<div class="carousel-caption">
 				<h3>Second slide label</h3>
@@ -20,7 +20,7 @@
 		</ng-template>
 		<ng-template ngbSlide>
 			<div class="picsum-img-wrapper">
-				<img src="/assets/img/solar_3.jpg" alt="Random third slide" />
+				<img src="/assets/img/solar_6.jpg" alt="Random third slide" />
 			</div>
 			<div class="carousel-caption">
 				<h3>Third slide label</h3>
@@ -29,11 +29,44 @@
 		</ng-template>
 	</ngb-carousel>
 
-    <div class="text-center my-3">
-        <button class="btn btn-purple btn-lg btn-block">Pedir Presupuesto</button>
-    </div>
 
-    <div ngbAccordion>
+    <div class="col-lg-8 mx-auto p-4 py-md-5">
+        <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+          <a class="d-flex align-items-center text-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            <span class="fs-4">Starter template</span>
+          </a>
+        </header>
+      
+        <main>
+          <h1 class="text-body-emphasis">Get started with Bootstrap</h1>
+          <p class="fs-5 col-md-8">Quickly and easily get started with Bootstrap's compiled, production-ready files with this barebones example featuring some basic HTML and helpful links. Download all our examples to get started.</p>
+      
+          <div class="mb-5">
+            <a href="/docs/5.3/examples/" class="btn btn-purple btn-lg px-4">Pedir presupuesto</a>
+          </div>
+      
+          <hr class="col-3 col-md-2 mb-5">
+      
+          <div class="row g-5">
+            <div class="col-md-6">
+              <h2 class="text-body-emphasis">Starter projects</h2>
+              <p>Ready to go beyond the starter template? Check out these open source projects that you can quickly duplicate to a new GitHub repository.</p>
+              <ul class="list-unstyled ps-0">
+              </ul>
+            </div>
+      
+            <div class="col-md-6">
+              <h2 class="text-body-emphasis">Guides</h2>
+              <p>Read more detailed instructions and documentation on using or contributing to Bootstrap.</p>
+              
+            </div>
+          </div>
+        </main>
+        
+      </div>
+
+      <div ngbAccordion>
         <div ngbAccordionItem [collapsed]="false">
             <h2 ngbAccordionHeader>
                 <button ngbAccordionButton>Simple</button>
@@ -70,23 +103,19 @@
                 </div>
             </div>
         </div>
-        <div ngbAccordionItem [disabled]="true">
+        <div ngbAccordionItem>
             <h2 ngbAccordionHeader>
-                <button ngbAccordionButton>Disabled</button>
+                <button ngbAccordionButton>Another Simple</button>
             </h2>
             <div ngbAccordionCollapse>
                 <div ngbAccordionBody>
                     <ng-template>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-                        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-                        moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
-                        keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-                        butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
-                        haven't heard of them accusamus labore sustainable VHS.
+                        Another simple accordion content.
                     </ng-template>
                 </div>
             </div>
         </div>
     </div>
+    
 
 }
