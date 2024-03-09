@@ -5,6 +5,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PlanListComponent } from './plan-list/plan-list.component';
+import { BudgetComponent } from './budget/budget.component';
 
 export const route: Routes = [
     { path: '', component: HomeComponent },
@@ -14,4 +15,5 @@ export const route: Routes = [
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
     { path: 'users/detail', component: UserDetailComponent},
+    { path: 'budget', component: BudgetComponent},
 ];
