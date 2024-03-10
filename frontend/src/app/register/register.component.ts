@@ -40,7 +40,7 @@ export class RegisterComponent {
        nickname: this.registerForm.get('nickname')?.value?? '',
        email: this.registerForm.get('email')?.value?? '',
        phone: this.registerForm.get('phone')?.value?? '',
-       password: this.registerForm.get('phone')?.value?? '',
+       password: this.registerForm.get('password')?.value?? '',
  
      };
      let url = 'http://localhost:3000/register';
