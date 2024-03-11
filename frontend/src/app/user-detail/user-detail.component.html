@@ -1,34 +1,37 @@
-<div>
-    <h2>User Detail</h2>
-    <form>
-      <label for="telefono">Teléfono:</label>
-      <input type="text" id="telefono" name="telefono" >
-  
-      <label for="nif">NIF/CIF:</label>
-      <input type="text" id="nif" name="nif" >
-  
-      <label for="direccion">Dirección:</label>
-      <input type="text" id="direccion" name="direccion" >
-  
-      <label for="ciudad">Ciudad:</label>
-      <input type="text" id="ciudad" name="ciudad" >
-  
-      <label for="codigoPostal">Código Postal:</label>
-      <input type="text" id="codigoPostal" name="codigoPostal" >
-  
-      <label for="tarjetaBancaria">Tarjeta Bancaria:</label>
-      <input type="text" id="tarjetaBancaria" name="tarjetaBancaria">
-  
-      <label for="m2">m2:</label>
-      <input type="number" id="m2" name="m2">
-  
-      <label for="miembros">Miembros:</label>
-      <input type="number" id="miembros" name="miembros">
-  
-      <label for="cocheElectrico">Coche Eléctrico:</label>
-      <input type="checkbox" id="coche_Electrico" name="coche_Electrico">
-  
-      <button (click)="save()">Guardar</button>
-    </form>
-  </div>
-  
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Password</th>
+      <th scope="col">Phone</th>
+      <th scope="col">NIF/CIF</th>
+      <th scope="col">Installation Address</th>
+      <th scope="col">Installation City</th>
+      <th scope="col">Postal Code</th>
+      <th scope="col">Account Number</th>
+      <th scope="col">M2</th>
+      <th scope="col">Members</th>
+      <th scope="col">Electric Car</th>
+    </tr>
+  <tbody>
+    <tr *NgFor>= "let user of users">
+      <th scope="row">{{user?.id}}</th>
+      <td>{{user?.customer_name}}/td>
+      <td>{{user?.customer_email}}</td>
+      <td>{{user?.password}}</td>
+      <td>{{user?.customer_phone}}</td>
+      <td>{{user?.nif_cif}}</td>
+      <td>{{user?.installation_addres}}</td>
+      <td>{{user?.installation_city}}</td>
+      <td>{{user?.postal_code}}</td>
+      <td>{{user?.account_number}}</td>
+      <td>{{user?.m2}}</td>
+      <td>{{user?.members}}</td>
+      <td>{{user?.electric_car}}</td>
+
+    </tr>
+
+  </tbody>
+</table>

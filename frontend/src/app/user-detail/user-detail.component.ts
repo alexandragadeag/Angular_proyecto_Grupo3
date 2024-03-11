@@ -2,12 +2,14 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../interfaces/user.model';
 import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { NgFor } from '@angular/common';
 
 
 @Component({
   selector: 'app-user-detail',
   standalone: true,
-  providers: [],
+  providers: [NgFor],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.css'
 })
@@ -21,15 +23,16 @@ throw new Error('Method not implemented.');
 
   ngOnInit(): void {
 
-    this.activatedRoute.params.subscribe((params: { [x: string]: any; }) => {
-      console.log(params['id']);
-      let idString = params['id'];
-      console.log('id', idString, 10);
-      let idNumber = parseInt(idString, 10);
-      console.log(idNumber);
+    this.activatedRoute.paramMap.pipe(
+      map(paramMap => paramMap.get('id'))
+    ).subscribe(idParam => {
+      if (idParam) {
+        this.loadUser(parseInt(idParam, 10));
+      }
+    });
 
       this.user = {
-        id: idNumber,
+        id: 1,
         customer_name: 'Juan',
         customer_email: '',
         password: '1234',
@@ -45,9 +48,10 @@ throw new Error('Method not implemented.');
       };
 
     }
-
-    );
+  loadUser(arg0: number) {
+    throw new Error('Method not implemented.');
   }
 
-
-}
+      
+    }
+  
