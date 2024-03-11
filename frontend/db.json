@@ -3,7 +3,7 @@
         {
             "id": 1,
             "customer_name": "Alexandros Jackes",
-            "customer_Email": "ajackes0@wikimedia.org",
+            "customer_email": "ajackes0@wikimedia.org",
             "password": "jM3?$Y|?j",
             "customer_phone": "2093891823",
             "nif_cif": "799917768-7",
@@ -18,7 +18,7 @@
         {
             "id": 2,
             "customer_name": "Biron Opy",
-            "customer_mail": "bopy1@usnews.com",
+            "customer_email": "bopy1@usnews.com",
             "password": "dV4/y&>!t'4",
             "customer_phone": "9061339649",
             "nif_cif": "287998810-1",
@@ -33,7 +33,7 @@
         {
             "id": 3,
             "customer_name": "Umberto MacDunlevy",
-            "customer_mail": "umacdunlevy2@dot.gov",
+            "customer_email": "umacdunlevy2@dot.gov",
             "password": "wH1<CaiQ#=vHFif}",
             "customer_phone": "4412273182",
             "nif_cif": "514327941-0",
@@ -48,7 +48,7 @@
         {
             "id": 4,
             "customer_name": "Moss Howlin",
-            "customer_mail": "mhowlin3@prnewswire.com",
+            "customer_email": "mhowlin3@prnewswire.com",
             "password": "yF7`i7iD",
             "customer_phone": "6169651987",
             "nif_cif": "260002469-7",
@@ -63,7 +63,7 @@
         {
             "id": 5,
             "customer_name": "Aguie Clubley",
-            "customer_mail": "aclubley4@netlog.com",
+            "customer_email": "aclubley4@netlog.com",
             "password": "dM7+AU4rT)xxVP>",
             "customer_phone": "2277555039",
             "nif_cif": "299337851-1",
@@ -78,7 +78,7 @@
         {
             "id": 6,
             "customer_name": "Maggie Pagen",
-            "customer_mail": "mpagen5@ca.gov",
+            "customer_email": "mpagen5@ca.gov",
             "password": "kS9|JD*OS.L4_zB=",
             "customer_phone": "4869487937",
             "nif_cif": "675147964-6",
@@ -93,7 +93,7 @@
         {
             "id": 7,
             "customer_name": "Laurie Cosins",
-            "customer_mail": "lcosins6@blog.com",
+            "customer_email": "lcosins6@blog.com",
             "password": "xL7`S3l3&EgJl",
             "customer_phone": "8415244945",
             "nif_cif": "683680638-2",
@@ -108,7 +108,7 @@
         {
             "id": 8,
             "customer_name": "Karina Milesop",
-            "customer_mail": "kmilesop7@sourceforge.net",
+            "customer_email": "kmilesop7@sourceforge.net",
             "password": "wZ0}HO)f0!|t6",
             "customer_phone": "7407335961",
             "nif_cif": "873633735-8",
@@ -123,7 +123,7 @@
         {
             "id": 9,
             "customer_name": "Antonino Danielou",
-            "customer_mail": "adanielou8@themeforest.net",
+            "customer_email": "adanielou8@themeforest.net",
             "password": "bS3{tyViZ5oz6(jD",
             "customer_phone": "5595231772",
             "nif_cif": "683337950-5",
@@ -138,7 +138,7 @@
         {
             "id": 10,
             "customer_name": "Gardie Terran",
-            "customer_mail": "gterran9@samsung.com",
+            "customer_email": "gterran9@samsung.com",
             "password": "nB4!q2+s>8+<",
             "customer_phone": "2452291471",
             "nif_cif": "241801715-X",

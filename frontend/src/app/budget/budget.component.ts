@@ -14,10 +14,10 @@ export class BudgetComponent {
   budgetForm = this.fb.group({
     name: [''],
     surname: [''],
-    phone: [''],
+    phone: [0],
     email: [''],
     address: [''],
-    postCode: [''],
+    postCode: [0],
     town: [''],
     installation: [''],
     descriptionAppliances: ['']
@@ -32,10 +32,10 @@ export class BudgetComponent {
       let budget: Budget = {
         name: this.budgetForm.get('name')?.value?? '',
         surname: this.budgetForm.get('surname')?.value?? '',
-        phone: parseInt(this.budgetForm.get('phone')?.value ?? '0'),
+        phone: this.budgetForm.get('phone')?.value ?? 0,
         email: this.budgetForm.get('email')?.value?? '',
         address: this.budgetForm.get('address')?.value?? '',
-        postCode: parseInt(this.budgetForm.get('postCode')?.value ?? '0'),
+        postCode: this.budgetForm.get('postCode')?.value ?? 0,
         town: this.budgetForm.get('town')?.value?? '',
         installation: this.budgetForm.get('installatiom')?.value?? '',
         descriptionAppliances: this.budgetForm.get('descriptionAppliances')?.value?? '',

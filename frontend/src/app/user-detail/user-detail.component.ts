@@ -4,22 +4,23 @@ import { User } from '../interfaces/user.model';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { NgFor } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @Component({
   selector: 'app-user-detail',
   standalone: true,
+  imports: [HttpClientModule],
   providers: [NgFor],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.css'
 })
 export class UserDetailComponent implements OnInit {
-save() {
-throw new Error('Method not implemented.');
-}
+
   user: User | undefined;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute,
+  private httpClient: HttpClient) { }
 
   ngOnInit(): void {
 
@@ -31,7 +32,7 @@ throw new Error('Method not implemented.');
       }
     });
 
-      this.user = {
+      /*this.user = {
         id: 1,
         customer_name: 'Juan',
         customer_email: '',
@@ -46,11 +47,13 @@ throw new Error('Method not implemented.');
         members: 4,
         electric_car: true
       };
+      */
 
     }
-  loadUser(arg0: number) {
-    throw new Error('Method not implemented.');
+  loadUser(userId: number) {
+  
   }
+ 
 
       
     }

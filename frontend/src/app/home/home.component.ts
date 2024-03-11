@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NgbAccordionModule, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgbCarouselModule, NgbAccordionModule],
+  imports: [NgbCarouselModule, NgbAccordionModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   providers: [],

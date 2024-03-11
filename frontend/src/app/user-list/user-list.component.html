@@ -10,6 +10,7 @@
             <th scope="col">Id</th>
             <th scope="col">Nombre</th>
             <th scope="col">Email</th>
+            <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -19,9 +20,9 @@
             <td>{{user.customer_name}}</td>
             <td>{{user.customer_email}}</td>
             <td>
-              <td>
+              
                 <a [routerLink]="['/users', user.id]" class="btn btn-purple">Ver</a>
-              </td>
+             
 
          
           </tr>
