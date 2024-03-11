@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-conocenos',
   standalone: true,
   imports: [],
-  templateUrl: './conocenos.component.html',
-  styleUrl: './conocenos.component.css'
+  templateUrl: './knowing.component.html',
+  styleUrl: './knowing.component.css'
 })
 export class ConocenosComponent {
 

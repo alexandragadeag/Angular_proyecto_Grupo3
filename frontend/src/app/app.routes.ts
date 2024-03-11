@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PlanListComponent } from './plan-list/plan-list.component';
 import { BudgetComponent } from './budget/budget.component';
-import { ConocenosComponent } from './conocenos/conocenos.component';
+import { ConocenosComponent } from './Knowing/Knowing.component';
 
 export const route: Routes = [
     { path: '', component: HomeComponent },
