@@ -1,40 +1,77 @@
 
-<!-- Mostrar un unico objeto user, no hay array-->
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Password</th>
-      <th scope="col">Phone</th>
-      <th scope="col">NIF/CIF</th>
-      <th scope="col">Installation Address</th>
-      <th scope="col">Installation City</th>
-      <th scope="col">Postal Code</th>
-      <th scope="col">Account Number</th>
-      <th scope="col">M2</th>
-      <th scope="col">Members</th>
-      <th scope="col">Electric Car</th>
-    </tr>
-  <tbody>
-    <tr *NgFor>= "let user of users">
-      <th scope="row">{{user?.id}}</th>
-      <td>{{user?.customer_name}}/td>
-      <td>{{user?.customer_email}}</td>
-      <td>{{user?.password}}</td>
-      <td>{{user?.customer_phone}}</td>
-      <td>{{user?.nif_cif}}</td>
-      <td>{{user?.installation_addres}}</td>
-      <td>{{user?.installation_city}}</td>
-      <td>{{user?.postal_code}}</td>
-      <td>{{user?.account_number}}</td>
-      <td>{{user?.m2}}</td>
-      <td>{{user?.members}}</td>
-      <td>{{user?.electric_car}}</td>
+<div class="container mt-5">
 
-    </tr>
+      
+    <div class="row">
+      <div class="col-4 text-center">
+  
+  
+        <div>
+        
+          <img class="img-fluid" src="https://ui-avatars.com/api/?name=A&size=256">
+  
+        </div>
+  
+        @if(user){
+          <div>
+            <button class="btn btn-danger" (click)="deleteUser()">Eliminar</button>
+        <button class="btn btn-primary" [routerLink]="['/user', user.id, 'update']">Editar</button>
+          </div>
+        }
+  
+      </div>
+      <div class="col-8">
+  
+        @if(user){
+          <h2>{{user.customer_name}}</h2>
+          <p>{{user.customer_email}}</p>
+          <p>{{user.customer_phone}}</p>
+          <p>{{user.installation_addres}}</p>
+        } @else {
+          <p>Usuario no encontrado.</p>
+        }
+        <div class="container px-4 py-5" id="icon-grid">
+          <h2 class="pb-2 border-bottom">Usuario con id {{user?.id}}</h2>
+  
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-geo-alt text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Nombre</h3>
+                <p>{{user?.customer_name}}</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-phone text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">email/h3>
+                <p>{{user?.customer_email}}</p>
+                
+                <div class="col d-flex align-items-start">
+              <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Teléfono</h3>
+                <p>{{user?.customer_phone}}</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">CC</h3>
+                <p>{{user?.account_number}}</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Dirección</h3>
+                <p>{{user?.installation_addres}}</p>
 
-  </tbody>
-</table>
+                <div class="col d-flex align-items-start">
+                  <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
+                  <div>
+                    <h3 class="fw-bold mb"></h3>
+              </div>
+            </div>
+        </div> </div>

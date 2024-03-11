@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { User } from '../interfaces/user.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { NgFor } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -10,12 +10,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-user-detail',
   standalone: true,
-  imports: [HttpClientModule],
+  imports: [HttpClientModule,RouterLink],
   providers: [NgFor],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.css'
 })
 export class UserDetailComponent implements OnInit {
+deleteUser() {
+throw new Error('Method not implemented.');
+}
 
   user: User | undefined;
 
