@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PlanListComponent } from './plan-list/plan-list.component';
 import { BudgetComponent } from './budget/budget.component';
-import { ConocenosComponent } from './Knowing/Knowing.component';
+import { KnowingComponent } from './Knowing/Knowing.component';
 
 export const route: Routes = [
     { path: '', component: HomeComponent },
@@ -17,6 +17,6 @@ export const route: Routes = [
     { path: 'register', component: RegisterComponent},
     { path: 'users/detail', component: UserDetailComponent},
     { path: 'budget', component: BudgetComponent},
-    { path: 'knowing', component: ConocenosComponent},
+    { path: 'knowing',component: KnowingComponent},
     
 ];
