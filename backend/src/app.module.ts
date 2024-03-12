@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserController } from './user/user.controller';
 import { User } from './user/user.model';
+import { BudgetController } from './budget/budget.controller';
+import { Budget } from './budget/budget.model';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -13,14 +15,14 @@ import { User } from './user/user.model';
       username: 'root',
       password: 'admin1234',
       database: 'nest_helio', // crear esta base de datos en MySQL primero
-      entities: [User],
+      entities: [User, Budget],
       synchronize: true, // generar tablas en base de datos
       logging: true
     }),
-    TypeOrmModule.forFeature([User]) // Esto permite acceder a Repository
+    TypeOrmModule.forFeature([User, Budget]) // Esto permite acceder a Repository
     
   ],
-  controllers: [AppController, UserController, ],
+  controllers: [AppController, UserController, BudgetController, ],
   providers: [AppService],
 })
 export class AppModule 
