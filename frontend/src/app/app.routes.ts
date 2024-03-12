@@ -19,4 +19,5 @@ export const route: Routes = [
     { path: 'budget', component: BudgetComponent},
     { path: 'knowing',component: KnowingComponent},
     
+    
 ];
