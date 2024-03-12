@@ -31,6 +31,9 @@ export class User {
     postal_code: number;
 
     @Column()
+    contract_date: Date;
+
+    @Column()
     account_number: number;
 
     @Column()

@@ -9,6 +9,7 @@ export interface User {
     installation_addres: string;
     installation_city: string;
     postal_code: number;
+    contract_date: Date;
     account_number: number;
     m2: number;
     members: number;
