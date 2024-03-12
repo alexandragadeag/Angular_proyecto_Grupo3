@@ -6,7 +6,7 @@
       <div>
         <img class="img-fluid" src="https://ui-avatars.com/api/?name=A&size=256">
       </div>
-      <div *ngIf="user"></div>
+      <div  [@if]="user"></div>
   
         @if(user){
           <h2>{{user.customer_name}}</h2>
@@ -67,11 +67,7 @@
       <div class="col-4 text-center">
   
   
-        <div>
-        
-          <img class="img-fluid" src="https://ui-avatars.com/api/?name=A&size=256">
-  
-        </div>
+    
   
         @if(user){
           <div>
@@ -134,9 +130,4 @@
                     <h3 class="fw-bold mb"></h3>
               </div>
             </div>
-        </div> </div> me-3 fs-2"></i>
-                  <div>
-                    <h3 class="fw-bold mb"></h3>
-              </div>
-            </div>
-        </div> </div>
+          </div>
