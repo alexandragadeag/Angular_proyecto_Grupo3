@@ -8,6 +8,7 @@ import { PlanListComponent } from './plan-list/plan-list.component';
 import { BudgetComponent } from './budget/budget.component';
 import { KnowingComponent } from './Knowing/Knowing.component';
 
+
 export const route: Routes = [
     { path: '', component: HomeComponent },
     { path: 'users', component: UserListComponent },

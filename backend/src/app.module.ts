@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-
+import { UserController } from './user/user.controller';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -11,7 +11,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       port: 3306,
       username: 'root',
       password: 'admin1234',
-      database: 'nest', // crear esta base de datos en MySQL primero
+      database: 'nest_helio', // crear esta base de datos en MySQL primero
       entities: [],
       synchronize: true, // generar tablas en base de datos
       logging: true
@@ -19,7 +19,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     TypeOrmModule.forFeature([]) // Esto permite acceder a Repository
     
   ],
-  controllers: [AppController, ],
+  controllers: [AppController, UserController,  ],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule 
+{
+  
+}
