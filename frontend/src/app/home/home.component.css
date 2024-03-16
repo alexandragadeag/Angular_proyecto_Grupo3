@@ -1,5 +1,5 @@
 .picsum-img-wrapper {
-    margin-top: 10px; /* ajustar este valor según nuestro diseño */
+    margin-top: 0px; /* ajustar este valor según nuestro diseño */
 }
 
 .picsum-img-wrapper {
@@ -11,3 +11,5 @@
     height: auto;
     max-height: 80vh; /* ajustar este valor según nuestras necesidades */
 }
+
+
