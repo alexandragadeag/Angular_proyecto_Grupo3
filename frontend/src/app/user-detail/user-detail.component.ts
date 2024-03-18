@@ -11,14 +11,15 @@ import { NgFor } from '@angular/common';
   imports: [HttpClientModule,RouterLink],
   providers: [NgFor],
   templateUrl: './user-detail.component.html',
-  styleUrl: './user-detail.component.css'
+  styleUrls: ['./user-detail.component.css']
+
 })
 export class UserDetailComponent implements OnInit {
 deleteUser() {
 throw new Error('Method not implemented.');
 }
 
-  user : User | undefined;
+  user: User | undefined;
 
   constructor(private http: HttpClient,
     private activatedRoute: ActivatedRoute) { }
