@@ -15,13 +15,13 @@ export class BudgetComponent {
     id: [],
     name: ['',[Validators.required]],
     surname: ['', [Validators.required]],
-    phone: [0],
-    email: [''],
-    address: [''],
-    postCode: [0],
-    town: [''],
-    installation: [''],
-    descriptionAppliances: ['']
+    phone: [, [Validators.required]],
+    email: ['',[Validators.required]],
+    address: ['',[Validators.required]],
+    postCode: [, [Validators.required]],
+    town: ['', [Validators.required]],
+    installation: ['', [Validators.required]],
+    descriptionAppliances: ['', [Validators.required]]
 
   });
 

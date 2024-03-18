@@ -9,8 +9,17 @@
         <div class="mb-3">
           <div style="text-align: left;">
             <label for="name" class="form-label">Nombre completo</label>
+            @if(budgetForm.controls.name.touched && budgetForm.controls.name.errors) {
+            <div>
+            @if (budgetForm.controls.name.errors['required']) {
+            <small class="text-danger">Nombre es obligatorio.</small>
+            
+            }
           </div>
-          <input formControlName="name" type="text" class="form-control" id="name" placeholder="Antonio">
+            } 
+
+          </div>
+          <input formControlName="name" type="text" class="form-control" id="name" placeholder="Antonio">  
         </div>
       </div>
 
@@ -18,6 +27,15 @@
         <div class="mb-3">
           <div style="text-align: left;">
             <label for="surname" class="form-label">Apellidos</label>
+            @if(budgetForm.controls.surname.touched && budgetForm.controls.surname.errors) {
+              <div>
+              @if (budgetForm.controls.surname.errors['required']) {
+              <small class="text-danger">Apellido es obligatorio.</small>
+              
+              }
+            </div>
+              } 
+
           </div>
           <input formControlName="surname" type="text" class="form-control" id="surname" placeholder="García Collado">
         </div>
@@ -27,6 +45,14 @@
         <div class="mb-3">
           <div style="text-align: left;">
             <label for="phone" class="form-label">Teléfono</label>
+            @if(budgetForm.controls.phone.touched && budgetForm.controls.phone.errors) {
+              <div>
+              @if (budgetForm.controls.phone.errors['required']) {
+              <small class="text-danger">Teléfono es obligatorio.</small>
+              
+              }
+            </div>
+              } 
           </div>
           <input formControlName="phone" type="tel" class="form-control" id="phone" placeholder="605874356">
         </div>
@@ -36,6 +62,14 @@
         <div class="mb-3">
           <div style="text-align: left;">
             <label for="email" class="form-label">Dirección de correo electrónico</label>
+            @if(budgetForm.controls.email.touched && budgetForm.controls.email.errors) {
+              <div>
+              @if (budgetForm.controls.email.errors['required']) {
+              <small class="text-danger">Dirección de correo electrónico es obligatorio.</small>
+              
+              }
+            </div>
+              } 
           </div>
           <input formControlName="email" type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
         </div>
@@ -45,6 +79,14 @@
         <div class="mb-3">
           <div style="text-align: left;">
             <label for="address" class="form-label">Dirección</label>
+            @if(budgetForm.controls.address.touched && budgetForm.controls.address.errors) {
+              <div>
+              @if (budgetForm.controls.address.errors['required']) {
+              <small class="text-danger">Dirección es obligatorio.</small>
+              
+              }
+            </div>
+              } 
           </div>
           <input formControlName="address" type="text" class="form-control" id="address" placeholder="Calle Peloponeso, 24">
         </div>
@@ -54,6 +96,14 @@
         <div class="mb-3">
           <div style="text-align: left;">
             <label for="postCode" class="form-label">Código Postal</label>
+            @if(budgetForm.controls.postCode.touched && budgetForm.controls.postCode.errors) {
+              <div>
+              @if (budgetForm.controls.postCode.errors['required']) {
+              <small class="text-danger">Código Postal es obligatorio.</small>
+              
+              }
+            </div>
+              } 
           </div>
           <input formControlName="postCode" type="text" class="form-control" id="postCode" placeholder="28037">
         </div>
@@ -63,6 +113,14 @@
         <div class="mb-3">
           <div style="text-align: left;">
             <label for="town" class="form-label">Ciudad</label>
+            @if(budgetForm.controls.town.touched && budgetForm.controls.town.errors) {
+              <div>
+              @if (budgetForm.controls.town.errors['required']) {
+              <small class="text-danger">Ciudad es obligatorio.</small>
+              
+              }
+            </div>
+              } 
           </div>
           <input formControlName="town" type="text" class="form-control" id="town" placeholder="Madrid">
         </div>
@@ -72,8 +130,24 @@
         <div class="mb-3">
           <div style="text-align: left;">
             <label for="installation" class="form-label">Selecciona un tipo de instalación</label>
+            @if(budgetForm.controls.installation.touched && budgetForm.controls.installation.errors) {
+              <div>
+              @if (budgetForm.controls.installation.errors['required']) {
+              <small class="text-danger">Selecciona un tipo de instalación.</small>
+              
+              }
+            </div>
+              } 
           </div>
           <select formControlName="installation" class="form-select" id="installation">
+            @if(budgetForm.controls.installation.touched && budgetForm.controls.installation.errors) {
+              <div>
+              @if (budgetForm.controls.installation.errors['required']) {
+              <small class="text-danger">Selecciona un tipo de instalación, es obigatorio.</small>
+              
+              }
+            </div>
+              } 
             <option selected>Selecciona un tipo de instalación</option>
             <option value="Monofásica">Monofásica</option>
             <option value="Bifásica">Bifásica</option>
@@ -85,6 +159,14 @@
       <div class="col-md-12">
         <div class="mb-3" style="text-align: left;">
           <label for="descriptionAppliances" class="form-label">Qué electrodomésticos tienes, potencia si lo sabes y cuántas horas los usas</label>
+          @if(budgetForm.controls.descriptionAppliances.touched && budgetForm.controls.descriptionAppliances.errors) {
+            <div>
+            @if (budgetForm.controls.descriptionAppliances.errors['required']) {
+            <small class="text-danger">Descripción es obligatorio.</small>
+            
+            }
+          </div>
+            } 
           <textarea formControlName="descriptionAppliances" class="form-control" id="descriptionAppliances" rows="3"></textarea>
         </div>
       </div>
