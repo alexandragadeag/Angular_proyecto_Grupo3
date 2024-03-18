@@ -1,6 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Budget } from '../interfaces/budget.model'
 @Component({
   selector: 'app-budget',
@@ -12,8 +12,8 @@ import { Budget } from '../interfaces/budget.model'
 export class BudgetComponent {
 
   budgetForm = this.fb.group({
-    name: [''],
-    surname: [''],
+    name: ['',[Validators.required]],
+    surname: ['', [Validators.required]],
     phone: [0],
     email: [''],
     address: [''],

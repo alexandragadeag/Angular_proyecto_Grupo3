@@ -14,22 +14,3 @@ export class PlanListComponent {
 
 }
 
-const plan = {
-  id: 1,
-  title: 'Plan particular',
-  descriptionShort: 'Plan 1 description',
-  descriptionLong: 'Plan 1 description long',
-  benefits: 'Plan 1 benefits',
-  // ...
-  // más info...
-  // ...
-};
-
-const plan2 =
-{
-  id: 2,
-  title: 'Plan empresa',
-  descriptionShort: 'Plan 2 description',
-  descriptionLong: 'Plan 2 description long',
-  benefits: 'Plan 2 benefits',
-}
