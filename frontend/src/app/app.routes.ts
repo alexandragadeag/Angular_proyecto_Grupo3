@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { PlanListComponent } from './plan-list/plan-list.component';
 import { BudgetComponent } from './budget/budget.component';
 import { KnowingComponent } from './Knowing/Knowing.component';
+import { DonationComponent } from './donation/donation.component';
 
 
 export const route: Routes = [
@@ -19,6 +20,7 @@ export const route: Routes = [
     { path: 'users/detail', component: UserDetailComponent},
     { path: 'budget', component: BudgetComponent},
     { path: 'knowing',component: KnowingComponent},
+    { path: 'donation',component: DonationComponent}
     
     
 ];
