@@ -12,6 +12,7 @@ import { Budget } from '../interfaces/budget.model'
 export class BudgetComponent {
 
   budgetForm = this.fb.group({
+    id: [],
     name: ['',[Validators.required]],
     surname: ['', [Validators.required]],
     phone: [0],
@@ -30,6 +31,7 @@ export class BudgetComponent {
     save(){
 
       let budget: Budget = {
+        id: this.budgetForm.get('id')?.value?? 0,
         name: this.budgetForm.get('name')?.value?? '',
         surname: this.budgetForm.get('surname')?.value?? '',
         phone: this.budgetForm.get('phone')?.value ?? 0,
@@ -37,7 +39,7 @@ export class BudgetComponent {
         address: this.budgetForm.get('address')?.value?? '',
         postCode: this.budgetForm.get('postCode')?.value ?? 0,
         town: this.budgetForm.get('town')?.value?? '',
-        installation: this.budgetForm.get('installatiom')?.value?? '',
+        installation: this.budgetForm.get('installation')?.value?? '',
         descriptionAppliances: this.budgetForm.get('descriptionAppliances')?.value?? '',
 
 

@@ -2,6 +2,8 @@
   <form [formGroup]="budgetForm" (ngSubmit)="save()">
     <h1 class="h3 mb-5 fw-normal">Formulario para obtener presupuesto</h1>
     
+    <input type="hidden" formControlName="id">
+    
     <div class="row g-3">
       <div class="col-md-6">
         <div class="mb-3">
@@ -106,11 +108,11 @@
         </div>
       </div>
     
-      <div>
-        <form>
+     
+     
           <button type="submit" class="btn btn-purple btn-lg mt-3 mb-4" style="width: 250px;">Enviar ahora</button>
-        </form>
-      </div>
+        
+   
     </div>
 
 

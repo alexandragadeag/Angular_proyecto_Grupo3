@@ -1,4 +1,5 @@
 export interface Budget {
+    id: number;
     name: string;
     surname: string;
     phone: number;

@@ -20,7 +20,7 @@ export class Budget {
     email: string;
 
     @Column()
-    addres: string;
+    address: string;
 
     @Column()
     postCode: number;
