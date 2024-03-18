@@ -1,4 +1,4 @@
-import { Plan } from "./plan.model";
+import { Budget } from "./budget.model";
 import { User } from "./user.model";
 
 export interface Contract {
@@ -14,5 +14,5 @@ export interface Contract {
     
     // asociaciones
     user: User; // Many To One
-    plan: Plan;// Many To One
+    budget: Budget;// Many To One
 }
