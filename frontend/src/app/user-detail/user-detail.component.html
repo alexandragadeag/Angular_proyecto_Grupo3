@@ -1,133 +1,161 @@
-
-
 <div class="container mt-5">
-  <div class="row"></div>
-    <div class="col-4 text-center"></div>
+
+  <div class="row">
+    <div class="col-4 text-center">
       <div>
         <img class="img-fluid" src="https://ui-avatars.com/api/?name=A&size=256">
       </div>
-      <div  [@if]="user"></div>
-  
-        @if(user){
-          <h2>{{user.customer_name}}</h2>
-          <p>{{user.customer_phone}}</p>
-          <p>{{user.nif_cif}}</p>
-          <p>{{user.installation_city}}</p>
-          <p>{{user.electric_car}}</p>
-        
-        <div class="container px-4 py-5" id="icon-grid">
-          <h2 class="pb-2 border-bottom">Usuario con id {{user.id}}</h2>
-  
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
-            <div class="col d-flex align-items-start">
-              <i class="bi bi-geo-alt text-info flex-shrink-0 me-3 fs-2"></i>
-              <div>
-                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Nombre</h3>
-                <p>{{user.customer_name}}</p>
-              </div>
-            </div>
-            <div class="col d-flex align-items-start">
-              <i class="bi bi-phone text-info flex-shrink-0 me-3 fs-2"></i>
-              <div>
-                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Télefono</h3>
-                <p>{{user.customer_phone}}</p>
-              </div>
-            </div>
-            <div class="col d-flex align-items-start">
-              <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
-              <div>
-                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Nif/Cif</h3>
-                <p>{{user.nif_cif}}</p>
-              </div>
-            </div>
-            <div class="col d-flex align-items-start">
-              <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
-              <div>
-                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Ciudad Instalación</h3>
-                <p>{{user.installation_city}}</p>
-              </div>
-            </div>
-            <div class="col d-flex align-items-start">
-              <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
-              <div>
-                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Vehículo eléctrico</h3>
-                <p>{{user.electric_car}}</p>
-              </div>
-            </div>
-  
-            </div>
-                 
-  
-        </div>
-      }
-<div class="container mt-5">
 
-      
-    <div class="row">
-      <div class="col-4 text-center">
-  
-  
-    
-  
-        @if(user){
-          <div>
-            <button class="btn btn-danger" (click)="deleteUser()">Eliminar</button>
+      @if(user){
+      <div>
+        <button class="btn btn-danger" (click)="deleteUser()">Eliminar</button>
         <button class="btn btn-primary" [routerLink]="['/user', user.id, 'update']">Editar</button>
-          </div>
-        }
-  
       </div>
-      <div class="col-8">
-  
-        @if(user){
-          <h2>{{user.customer_name}}</h2>
-          <p>{{user.customer_email}}</p>
-          <p>{{user.customer_phone}}</p>
-          <p>{{user.installation_addres}}</p>
-        } @else {
-          <p>Usuario no encontrado.</p>
-        }
-        <div class="container px-4 py-5" id="icon-grid">
-          <h2 class="pb-2 border-bottom">Usuario con id {{user?.id}}</h2>
-  
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
-            <div class="col d-flex align-items-start">
-              <i class="bi bi-geo-alt text-info flex-shrink-0 me-3 fs-2"></i>
-              <div>
-                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Nombre</h3>
-                <p>{{user?.customer_name}}</p>
-              </div>
-            </div>
-            <div class="col d-flex align-items-start">
-              <i class="bi bi-phone text-info flex-shrink-0 me-3 fs-2"></i>
-              <div>
-                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">email/h3>
-                <p>{{user?.customer_email}}</p>
-                
-                <div class="col d-flex align-items-start">
-              <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
-              <div>
-                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Teléfono</h3>
-                <p>{{user?.customer_phone}}</p>
-              </div>
-            </div>
-            <div class="col d-flex align-items-start">
-              <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
-              <div>
-                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">CC</h3>
-                <p>{{user?.account_number}}</p>
-              </div>
-            </div>
-            <div class="col d-flex align-items-start">
-              <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
-              <div>
-                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Dirección</h3>
-                <p>{{user?.installation_addres}}</p>
+      }
 
-                <div class="col d-flex align-items-start">
-                  <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
-                  <div>
-                    <h3 class="fw-bold mb"></h3>
+    </div>
+    <div class="col-8">
+
+      @if(user){
+      <p>{{user.customer_phone}}</p>
+      <p>{{user.installation_addres}}</p>
+      <p>{{user.account_number}}</p>
+      <p>{{user.members}}</p>
+      <p>{{user.m2}}</p>
+      <p>{{user.electric_car}}</p>
+
+      }
+      <div class="container px-4 py-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom">
+          <p>{{user?.id}}
+        </h2>
+
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
+          <div class="col d-flex align-items-start">
+            <i class="bi bi-geo-alt text-info flex-shrink-0 me-3 fs-2"></i>
+            <div>
+              <h2 class="fw-bold mb-0 fs-4 text-body-emphasis">Dirección instalación</h2>
+              <p>{{user?.installation_addres}}</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <i class="bi bi-phone text-info flex-shrink-0 me-3 fs-2"></i>
+            <div>
+              <h2 class="fw-bold mb-0 fs-4 text-body-emphasis">Superficie</h2>
+              <p>{{user?.m2}}</p>
+
+              <div class="col d-flex align-items-start">
+                <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
+                <div>
+                  <h2 class="fw-bold mb-0 fs-4 text-body-emphasis">Teléfono</h2>
+                  <p>{{user?.customer_phone}}</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
+                <div>
+                  <h2 class="fw-bold mb-0 fs-4 text-body-emphasis">Datos bancarios</h2>
+                  <p>{{user?.account_number}}</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
+                <div>
+                  <h2 class="fw-bold mb-0 fs-4 text-body-emphasis">Coche eléctrico</h2>
+                  <p>{{user?.electric_car}}</p>
+
+                  <div class="col d-flex align-items-start">
+                    <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
+                    <div>
+                      <h2 class="fw-bold mb">Miembros</h2>
+                      <p>{{user?.members}}</p>
+
+
+                    </div>
+                  </div>
+                </div>
+
+
               </div>
             </div>
           </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-4 text-center">
+
+
+
+    </div>
+    <div class="col-8">
+
+      @if(user){
+      <div class="container px-4 py-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom">usuario con id {{user.id}}</h2>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
+          <div class="col d-flex align-items-start">
+            <i class="bi bi-geo-alt text-info flex-shrink-0 me-3 fs-2"></i>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Datos bancarios</h3>
+              <p>{{user.account_number}}</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <i class="bi bi-phone text-info flex-shrink-0 me-3 fs-2"></i>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Teléfono</h3>
+              <p>{{user.customer_phone}}</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Dirección</h3>
+              <p>{{user.installation_addres}}</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em">
+              <use xlink:href="#speedometer2"></use>
+            </svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Coche eléctrico</h3>
+              <p>{{user.electric_car}}</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em">
+              <use xlink:href="#toggles2"></use>
+            </svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Superficie</h3>
+              <p>{{user.m2}}</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em">
+              <use xlink:href="#geo-fill"></use>
+            </svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Miembros</h3>
+              <p>{{user.members}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      } @else {
+      <p></p>
+      }
+    </div>
+  </div>
+</div>
