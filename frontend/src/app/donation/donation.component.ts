@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
+
 export @Component({
   selector: 'app-donation',
   standalone: true,
@@ -9,6 +10,8 @@ export @Component({
   styleUrl: './donation.component.css'
 })
 class DonationComponent {
+
+
 
   constructor() { }
 
