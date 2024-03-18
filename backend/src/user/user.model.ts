@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn } from "typeorm";
 
 @Entity()
 export class User {
@@ -25,13 +26,15 @@ export class User {
     installation_address: string;
 
     @Column()
+
     installation_city: string;
 
     @Column()
     postal_code: number;
 
-    @Column()
+    @CreateDateColumn()
     contract_date: Date;
+
 
     @Column()
     account_number: number;
