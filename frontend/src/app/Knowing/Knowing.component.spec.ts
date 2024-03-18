@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KnowingComponent } from './Knowing.component';
+import { KnowingComponent } from './knowing.component';
 
 describe('KnowingComponent', () => {
   let component: KnowingComponent;
