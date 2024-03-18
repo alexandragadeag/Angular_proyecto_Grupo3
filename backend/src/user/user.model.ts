@@ -22,7 +22,7 @@ export class User {
     nif_cif: string;
 
     @Column()
-    installation_addres: string;
+    installation_address: string;
 
     @Column()
     installation_city: string;
