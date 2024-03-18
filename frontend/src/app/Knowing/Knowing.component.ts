@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-Knowing',
+  selector: 'app-knowing',
   standalone: true,
   imports: [],
   templateUrl: './knowing.component.html',
