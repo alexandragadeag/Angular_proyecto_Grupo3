@@ -148,7 +148,7 @@
               }
             </div>
               } 
-            <option selected>Selecciona un tipo de instalación</option>
+            <option>Selecciona un tipo de instalación</option>
             <option value="Monofásica">Monofásica</option>
             <option value="Bifásica">Bifásica</option>
             <option value="Trifásica">Trifásica</option>
@@ -192,11 +192,14 @@
     
      
      
-          <button type="submit" class="btn btn-purple btn-lg mt-3 mb-4" style="width: 250px;">Enviar ahora</button>
+          <button type="submit" class="btn btn-purple btn-lg mt-3 mb-4" style="width: 250px;" [disabled]="budgetForm.invalid">Enviar ahora</button>
+         
         
    
     </div>
-
+    @if (budgetForm.invalid) {
+      <small class="text-danger">Debes completar de forma correcta todos los campos para poder enviar.</small>
+      }
 
   </form>
 
