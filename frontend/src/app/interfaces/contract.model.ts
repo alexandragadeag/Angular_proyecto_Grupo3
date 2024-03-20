@@ -8,7 +8,7 @@ export interface Contract {
     discount: number;
     startDate: Date;
     endDate: Date;
-    bankAccountNumber: string;
+    bankAccountNumber: number;
     paymentFrequency: number; // Cada cuantos meses se cobra
     active: boolean;
     

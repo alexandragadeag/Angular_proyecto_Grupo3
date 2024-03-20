@@ -6,6 +6,8 @@ import { UserController } from './user/user.controller';
 import { User } from './user/user.model';
 import { BudgetController } from './budget/budget.controller';
 import { Budget } from './budget/budget.model';
+import { ContractController } from './contract/contract.controller';
+import { Contract } from './contract/contract.model';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -15,14 +17,14 @@ import { Budget } from './budget/budget.model';
       username: 'root',
       password: 'admin1234',
       database: 'nest_helio', // crear esta base de datos en MySQL primero
-      entities: [User, Budget],
+      entities: [User, Budget, Contract],
       synchronize: true, // generar tablas en base de datos
       logging: true
     }),
-    TypeOrmModule.forFeature([User, Budget]) // Esto permite acceder a Repository
+    TypeOrmModule.forFeature([User, Budget, Contract]) // Esto permite acceder a Repository
     
   ],
-  controllers: [AppController, UserController, BudgetController, ],
+  controllers: [AppController, UserController, BudgetController, ContractController, ],
   providers: [AppService],
 })
 export class AppModule 
