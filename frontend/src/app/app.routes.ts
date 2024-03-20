@@ -8,6 +8,8 @@ import { PlanListComponent } from './plan-list/plan-list.component';
 import { BudgetComponent } from './budget/budget.component';
 import { KnowingComponent } from './knowing/knowing.component';
 import { DonationComponent } from './donation/donation.component';
+import { ContractDetailComponent } from './contract-detail/contract-detail.component';
+import { ContractListComponent } from './contract-list/contract-list.component';
 
 
 export const route: Routes = [
@@ -20,7 +22,9 @@ export const route: Routes = [
     { path: 'users/detail', component: UserDetailComponent},
     { path: 'budget', component: BudgetComponent},
     { path: 'knowing',component: KnowingComponent},
-    { path: 'donation',component: DonationComponent}
+    { path: 'donation',component: DonationComponent},
+    { path: 'contracts', component: ContractDetailComponent},
+    { path: 'contracts', component: ContractListComponent}
     
     
 ];
