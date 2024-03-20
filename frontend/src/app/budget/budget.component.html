@@ -1,4 +1,15 @@
 <main class="form-signin mx-auto text-center w-75 mt-5">
+
+  @if (showConfirmMessage) {
+    <ngb-alert type="success" [dismissible]="false" class="mt-5" style="min-height:200px">
+     Se ha completado el formulario correctamente.
+     <br>
+     Nos pondremos en contacto, lo antes posible.
+    </ngb-alert>
+    <button class="w-100 btn btn-primary btn-lg" routerLink="/plans">Volver a planes</button>
+
+
+} @else {
   <form [formGroup]="budgetForm" (ngSubmit)="save()">
     <h1 class="h3 mb-5 fw-normal">Formulario para obtener presupuesto</h1>
     
@@ -202,5 +213,6 @@
       }
 
   </form>
+}
 
 </main>

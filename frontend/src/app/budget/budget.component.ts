@@ -2,14 +2,17 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Budget } from '../interfaces/budget.model'
+import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-budget',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule],
+  imports: [ReactiveFormsModule, HttpClientModule, NgbAlert],
   templateUrl: './budget.component.html',
   styleUrl: './budget.component.css'
 })
 export class BudgetComponent {
+
+  showConfirmMessage = false;
 
   budgetForm = this.fb.group({
     id: [],
@@ -49,6 +52,7 @@ export class BudgetComponent {
       this.httpClient.post<Budget>(url,budget)
                       .subscribe(res => {
                         console.log(res);
+                        this.showConfirmMessage = true;
                       });
     }
 
