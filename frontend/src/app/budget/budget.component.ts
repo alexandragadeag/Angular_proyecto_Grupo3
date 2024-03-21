@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Budget } from '../interfaces/budget.model'
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-budget',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule, NgbAlert],
+  imports: [ReactiveFormsModule, HttpClientModule, NgbAlert, RouterLink],
   templateUrl: './budget.component.html',
   styleUrl: './budget.component.css'
 })
