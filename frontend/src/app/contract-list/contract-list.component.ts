@@ -18,7 +18,7 @@ export class ContractListComponent implements OnInit {
 
   ngOnInit(): void {
     this.httpClient.get<Contract[]>('http://localhost:3000/contract')
-       .subscribe(authors => this.contracts = this.contracts);
+       .subscribe(contracts => this.contracts = this.contracts);
   }
 
 }

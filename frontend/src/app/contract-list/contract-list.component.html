@@ -1,1 +1,42 @@
-<p>contract-list works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+  
+        <h1 class="mt-5">Listado de contratos</h1>
+  
+
+
+        <table class="table table-striped mt-5">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Duración del contrato</th>
+              <th scope="col">Fecha de inicio</th>
+              <th scope="col">Fecha de fin</th>
+              <th scope="col">Numero de cuenta</th>
+              <th scope="col">Cada cuantos meses se paga</th>
+              <th scope="col">Activo</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for(contract of contracts; track contract.id) {
+            <tr>
+              <td>{{contract.id}}</td>
+              <td>{{contract.duration}}</td>
+              <td>{{contract.startDate}}</td>
+              <td>{{contract.endDate}}</td>
+  
+              <td>
+                <button class="btn btn-info me-2 btn-sm" [routerLink]="['/contracts', contract.id, 'detail']">
+                  Ver 
+                </button>
+  
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
