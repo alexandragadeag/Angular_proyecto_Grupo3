@@ -23,7 +23,7 @@ export const route: Routes = [
     { path: 'budget', component: BudgetComponent},
     { path: 'knowing',component: KnowingComponent},
     { path: 'donation',component: DonationComponent},
-    { path: 'contracts', component: ContractDetailComponent},
+    { path: 'contracts/detail', component: ContractDetailComponent},
     { path: 'contracts', component: ContractListComponent}
     
     
