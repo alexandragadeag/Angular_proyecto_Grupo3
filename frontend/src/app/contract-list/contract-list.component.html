@@ -31,7 +31,16 @@
                 <button class="btn btn-info me-2 btn-sm" [routerLink]="['/contracts', contract.id, 'detail']">
                   Ver 
                 </button>
-  
+              </td>
+              <td>
+                Mese
+              </td>
+              <td>
+                @if (contract.active) {
+                  kk
+                }@else {
+                  ll
+                }
               </td>
             </tr>
             }
