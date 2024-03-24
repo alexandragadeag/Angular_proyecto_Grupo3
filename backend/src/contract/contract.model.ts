@@ -10,7 +10,7 @@ export class Contract {
     id: number;
 
     @Column()
-    duration: number;
+    duration: string;
 
     @Column()
     discount: number;

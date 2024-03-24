@@ -5,7 +5,9 @@
         <h1 class="mt-5">Listado de contratos</h1>
   
 
-
+        @if (showDeletedMessage) {
+          <ngb-alert type="success" (closed)="closeMessage()">Contrato desactivado correctamente.</ngb-alert>
+        }
         <table class="table table-striped mt-5">
           <thead>
             <tr>
@@ -26,22 +28,30 @@
               <td>{{contract.duration}}</td>
               <td>{{contract.startDate}}</td>
               <td>{{contract.endDate}}</td>
-  
+              <td>{{contract.bankAccountNumber}}</td>
+              <td>{{contract.paymentFrequency}}</td>
+             
+
               <td>
+                @if (contract.active) {
+                  <span class="badge text-bg-success">Sí</span>
+                } @else {
+                  <span class="badge text-bg-danger">No</span>
+                }
+              </td>
+
+              <td>
+
+
                 <button class="btn btn-info me-2 btn-sm" [routerLink]="['/contracts', contract.id, 'detail']">
                   Ver 
                 </button>
+                <button class="btn btn-danger me-2 btn-sm" (click)="delete(contract)">
+                  Desactivar
+                </button>
               </td>
-              <td>
-                Mese
-              </td>
-              <td>
-                @if (contract.active) {
-                  kk
-                }@else {
-                  ll
-                }
-              </td>
+             
+
             </tr>
             }
           </tbody>

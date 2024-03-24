@@ -4,7 +4,7 @@ import { User } from "./user.model";
 export interface Contract {
     id: number;
 
-    duration: number;
+    duration: string;
     discount: number;
     startDate: Date;
     endDate: Date;
