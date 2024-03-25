@@ -4,11 +4,13 @@ export interface Invoice {
     id: number;
 
     numberCode: string;
-    price: number;
+    price: number; //Omitir precio por consumo
     emitDate: Date; // Fecha emisión de la factura
     // periodo facturado:
     startDate: Date;
     endDate: Date;
+
+    //Realizar calculo 
 
     contract: Contract;
 }
