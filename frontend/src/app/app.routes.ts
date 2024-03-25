@@ -19,7 +19,7 @@ export const route: Routes = [
     { path: 'plans', component:PlanListComponent },
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
-    { path: 'users/detail', component: UserDetailComponent},
+    { path: 'users/detail/:id', component: UserDetailComponent},
     { path: 'budget', component: BudgetComponent},
     { path: 'knowing',component: KnowingComponent},
     { path: 'donation',component: DonationComponent},
