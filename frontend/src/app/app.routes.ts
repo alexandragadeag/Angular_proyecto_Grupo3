@@ -15,7 +15,7 @@ import { ContractListComponent } from './contract-list/contract-list.component';
 export const route: Routes = [
     { path: '', component: HomeComponent },
     { path: 'users', component: UserListComponent },
-    { path: 'users/:id', component: UserDetailComponent },
+    { path: 'users/detail', component: UserDetailComponent },
     { path: 'plans', component:PlanListComponent },
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
