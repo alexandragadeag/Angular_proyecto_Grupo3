@@ -1,1 +1,86 @@
-<p>contract-detail works!</p>
+<div class="container mt-5">
+
+    <div class="row">
+      <ngb-alert>
+        <strong>Warning!</strong> Este contrato se encuentra desactivado.
+      </ngb-alert>
+    </div>
+  
+    <div class="row">
+      <div class="col-4 text-center">
+  
+  
+        <div>
+          <img class="img-fluid" src="https://ui-avatars.com/api/?name=A&size=256">
+  
+        </div>
+  
+        @if(contract){
+          <div>
+        <button class="btn btn-primary"
+        [routerLink]="['']" >Descargar contrato</button>
+          </div>
+        }
+  
+      </div>
+      <div class="col-8">
+  
+        @if(contract){
+        <div class="container px-4 py-5" id="icon-grid">
+          <h2 class="pb-2 border-bottom">Contrato con id {{contract.id}}</h2>
+  
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-calendar-week text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Duración en meses</h3>
+                <p>{{contract.duration}}</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-percent text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Descuento</h3>
+                <p>{{contract.discount}}</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-calendar2-check-fill text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Fecha de inicio del contrato</h3>
+                <p>{{contract.startDate}}</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-calendar2-minus-fill text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Fecha de fin del contrato</h3>
+                <p>{{contract.endDate}}</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-person-vcard text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Número de cuenta donde se realiza el cobro</h3>
+                <p>{{contract.bankAccountNumber}}</p>
+              </div>
+            </div>
+
+            <div class="col d-flex align-items-start">
+                <i class="bi bi-123 text-info flex-shrink-0 me-3 fs-2"></i>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Cada cuantos meses se paga</h3>
+                  <p>{{contract.paymentFrequency}}</p>
+                </div>
+              </div>
+  
+            
+  
+          </div>
+        </div>
+  
+      } @else {
+        <p>Contrato no encontrado.</p>
+      }
+      </div>
+    </div>
