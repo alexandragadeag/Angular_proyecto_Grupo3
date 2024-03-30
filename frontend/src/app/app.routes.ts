@@ -10,6 +10,9 @@ import { KnowingComponent } from './knowing/knowing.component';
 import { DonationComponent } from './donation/donation.component';
 import { ContractDetailComponent } from './contract-detail/contract-detail.component';
 import { ContractListComponent } from './contract-list/contract-list.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { ProductFormComponent } from './product-form/product-form.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 
 export const route: Routes = [
@@ -24,7 +27,11 @@ export const route: Routes = [
     { path: 'knowing',component: KnowingComponent},
     { path: 'donation',component: DonationComponent},
     { path: 'contracts/detail/:id', component: ContractDetailComponent},
-    { path: 'contracts', component: ContractListComponent}
+    { path: 'contracts', component: ContractListComponent},
+    { path: 'products', component: ProductListComponent},
+    { path: 'products/create', component: ProductFormComponent},
+    { path: 'products/:id/update', component: ProductFormComponent},
+    { path: 'products/:id/detail', component: ProductDetailComponent}
     
     
 ];
