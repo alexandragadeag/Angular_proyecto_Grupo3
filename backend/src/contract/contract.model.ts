@@ -15,10 +15,10 @@ export class Contract {
     @Column()
     discount: number;
 
-    @Column()
+    @Column({type: 'date', nullable:true}) // sin hora minutos
     startDate: Date;
 
-    @Column()
+    @Column({type: 'date', nullable:true}) // sin hora minutos
     endDate: Date;
 
     @Column()
