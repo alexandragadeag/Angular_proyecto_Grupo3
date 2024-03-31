@@ -25,9 +25,24 @@ export class ProductController {
         });
     }
 
+    
+    @Get('filter-by-description/:description')
+    findByDescription(
+        @Param('description') description: string,
+        ) {
+
+        // filtrar por descripción
+        return this.productRepo.find({
+            where: {
+                Description: description
+            
+            }
+        });
+    }
+
 
     @Get('filter-by-price/:price')
-    findBySalary(@Param('price', ParseFloatPipe) price: number ) {
+    findByPrice(@Param('price', ParseFloatPipe) price: number ) {
 
         return this.productRepo.find({
             where: {

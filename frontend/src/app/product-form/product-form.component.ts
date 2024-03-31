@@ -16,9 +16,10 @@ export class ProductFormComponent implements OnInit {
   productForm = new FormGroup({
     id: new FormControl(),
     title: new FormControl(''),
+    description: new FormControl(''),
     price: new FormControl(0.0),
     photoUrl: new FormControl(''),
-    description: new FormControl(''),
+    
   });
 
 
@@ -47,8 +48,9 @@ export class ProductFormComponent implements OnInit {
           id: product.id,
           title: product.title,
           description: product.description,
-          photoUrl: product.photoUrl,
           price: product.price,
+          photoUrl: product.photoUrl,
+          
           
         });
       
@@ -77,9 +79,9 @@ export class ProductFormComponent implements OnInit {
     let formData = new FormData();
     formData.append('id', this.productForm.get('id')?.value ?? 0);
     formData.append('title', this.productForm.get('title')?.value ?? '');
-    formData.append('photoUrl', this.productForm.get('photoUrl')?.value ?? ''); // Conservar photoUrl para no perder foto
+    formData.append('description', this.productForm.get('description')?.value ?? ''); 
     formData.append('price', this.productForm.get('price')?.value + ''); // + '' Para conversión implítica de number a string
-    formData.append('description', this.productForm.get('description')?.value ?? '');
+    formData.append('photoUrl', this.productForm.get('photoUrl')?.value ?? ''); // Conservar photoUrl para no perder foto
   
 
     if (this.photoFile) formData.append('file', this.photoFile);
