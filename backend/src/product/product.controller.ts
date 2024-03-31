@@ -34,7 +34,7 @@ export class ProductController {
         // filtrar por descripción
         return this.productRepo.find({
             where: {
-                Description: description
+                description: description
             
             }
         });

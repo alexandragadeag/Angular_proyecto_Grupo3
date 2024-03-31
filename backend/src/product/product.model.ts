@@ -10,7 +10,7 @@ export class Product {
     title: string;
 
     @Column({length: 3000, nullable: true})
-    Description: string;
+    description: string;
 
 
     @Column({nullable: true})
