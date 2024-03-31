@@ -1,1 +1,25 @@
-<p>product-detail works!</p>
+@if(product) {
+    <div class="mt-5 text-center">
+      <!-- Recomendable imágenes cuadradas por ejemplo 500x500 -->
+      <img
+      class="d-block mx-auto mb-4 rounded-circle"
+      [src]="'http://localhost:3000/uploads/' + product.photoUrl" alt="product"
+      style="max-width:150px;">
+  
+      <h1 class="display-5 fw-bold text-body-emphasis">{{product.title}} 
+          <i class="bi bi-sunrise ms-2"></i>  
+      </h1>
+      <div class="col-lg-6 mx-auto">
+        <h4>{{product.price}}</h4>
+        <p class="lead mb-4">{{product.description}}</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <button type="button" class="btn btn-purple btn-lg px-4 gap-3"
+            [routerLink]="['/products', product.id, 'update']">
+            Editar
+          </button>
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+        </div>
+      </div>
+    </div>
+  }
+  
