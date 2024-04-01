@@ -1,12 +1,12 @@
 <main class="form-signin mx-auto text-center w-75 mt-5">
 
   @if (showConfirmMessage) {
-    <ngb-alert type="success" [dismissible]="false" class="mt-5" style="min-height:200px">
+    <ngb-alert type="success" [dismissible]="false" class="text-center" style="min-height:100px">
      Se ha completado el formulario correctamente.
      <br>
      Nos pondremos en contacto, lo antes posible.
     </ngb-alert>
-    <button class="w-100 btn btn-purple btn-lg" routerLink="/plans">Volver a planes</button>
+    <button class="w-100 btn btn-purple btn-lg px-4" routerLink="/plans">Volver a planes</button>
 
 
 } @else {
@@ -30,7 +30,7 @@
             } 
 
           </div>
-          <input formControlName="name" type="text" class="form-control" id="name" placeholder="Antonio">  
+          <input formControlName="name" type="text" class="form-control" id="name" placeholder="Nombre">  
         </div>
       </div>
 
@@ -48,7 +48,7 @@
               } 
 
           </div>
-          <input formControlName="surname" type="text" class="form-control" id="surname" placeholder="García Collado">
+          <input formControlName="surname" type="text" class="form-control" id="surname" placeholder="Apellidos">
         </div>
       </div>
 
@@ -65,7 +65,7 @@
             </div>
               } 
           </div>
-          <input formControlName="phone" type="tel" class="form-control" id="phone" placeholder="605874356">
+          <input formControlName="phone" type="tel" class="form-control" id="phone" placeholder="Número de teléfono">
         </div>
       </div>
 
@@ -99,7 +99,7 @@
             </div>
               } 
           </div>
-          <input formControlName="address" type="text" class="form-control" id="address" placeholder="Calle Peloponeso, 24">
+          <input formControlName="address" type="text" class="form-control" id="address" placeholder="Calle">
         </div>
       </div>
 
@@ -116,7 +116,7 @@
             </div>
               } 
           </div>
-          <input formControlName="postCode" type="text" class="form-control" id="postCode" placeholder="28037">
+          <input formControlName="postCode" type="text" class="form-control" id="postCode" placeholder="Código postal">
         </div>
       </div>
 
@@ -133,7 +133,7 @@
             </div>
               } 
           </div>
-          <input formControlName="town" type="text" class="form-control" id="town" placeholder="Madrid">
+          <input formControlName="town" type="text" class="form-control" id="town" placeholder="Ciudad">
         </div>
       </div>
 
@@ -150,7 +150,7 @@
             </div>
               } 
           </div>
-          <select formControlName="installation" class="form-select" id="installation">
+          <select formControlName="installation" class="form-select" id="installation" >
             @if(budgetForm.controls.installation.touched && budgetForm.controls.installation.errors) {
               <div>
               @if (budgetForm.controls.installation.errors['required']) {
@@ -178,7 +178,7 @@
             }
           </div>
             } 
-          <textarea formControlName="descriptionAppliances" class="form-control" id="descriptionAppliances" rows="3"></textarea>
+          <textarea formControlName="descriptionAppliances" class="form-control" id="descriptionAppliances" rows="3" placeholder="Detalla los electrodomésticos que tengas y potencia"></textarea>
         </div>
       </div>
     </div>

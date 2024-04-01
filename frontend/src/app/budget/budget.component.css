@@ -20,3 +20,17 @@
     box-shadow: none; /* Elimina la sombra al hacer foco */
   }
 
+  .container {
+    max-width: 400px; /* Ancho máximo para el contenedor */
+  }
+  
+  .ngb-alert {
+    border-radius: 10px; /* Hacer que la alerta sea más cuadrada */
+    padding: 20px; /* Aumentar el espacio interno */
+  }
+  
+  .btn {
+    border-radius: 10px; /* Hacer que el botón sea más cuadrado */
+    padding: 10px; /* Aumentar el espacio interno */
+    font-size: 16px; /* Tamaño de fuente más pequeño */
+  }
