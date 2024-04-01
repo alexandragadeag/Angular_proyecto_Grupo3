@@ -22,3 +22,5 @@ export class UserListComponent implements OnInit {
   }
 
 }
+
+export { User };
