@@ -1,4 +1,5 @@
 import { Budget } from "src/budget/budget.model";
+import { Product } from "src/product/product.model";
 import { User } from "src/user/user.model";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
@@ -22,7 +23,7 @@ export class Contract {
     endDate: Date;
 
     @Column()
-    bankAccountNumber: number;
+    bankAccountNumber: string;
 
     @Column()
     paymentFrequency: number; //Cada cuantos meses se cobra
@@ -33,6 +34,8 @@ export class Contract {
 // asociaciones
 user: User; // Many To One
 budget: Budget;// Many To One
+// opcional
+//product: Product; // Many To One
 
 
 }
