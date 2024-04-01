@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
 import { Invoice } from './invoice.model';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -26,6 +26,17 @@ export class InvoiceController {
         return this.invoiceRepository.findOne({ where: { id } });
     }
         
+    @Get('filter-by-contract/:id')
+    findByContractId(@Param('id', ParseIntPipe) id: number) {
+
+        return this.invoiceRepository.findOne({
+            where: {
+                contract: {
+                    id: id
+                }
+            }
+        });
+    }
 
     
 }
