@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Contract } from "src/contract/contract.model";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity()
@@ -22,10 +23,13 @@ export class Invoice {
     @Column()
     endDate: Date;
 
-    @Column()
-    contract: string;
+
+    @ManyToOne(() => Contract, {eager:true})
+    contract: Contract;
 
     //cálculo kw/dia por 30 días
+    @Column()
+    consumption: number;
 
     @Column()
     totalPrice: number;
