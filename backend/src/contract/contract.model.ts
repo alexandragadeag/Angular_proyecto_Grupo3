@@ -1,7 +1,7 @@
 import { Budget } from "src/budget/budget.model";
 import { Product } from "src/product/product.model";
 import { User } from "src/user/user.model";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity()
@@ -31,11 +31,12 @@ export class Contract {
     @Column()
     active: boolean;
 
-// asociaciones
-user: User; // Many To One
-budget: Budget;// Many To One
 // opcional
 //product: Product; // Many To One
+@ManyToOne(() => User, {eager: true})
+user: User;
 
+@ManyToOne(() => Budget, {eager: true})
+budget: Budget;
 
 }
