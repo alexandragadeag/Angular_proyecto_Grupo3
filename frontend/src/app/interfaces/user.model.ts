@@ -6,7 +6,7 @@ export interface User {
     password: string, // sirve para login
     customer_phone: string;
     nif_cif: string;
-    installation_addres: string;
+    installation_address: string;
     installation_city: string;
     postal_code: number;
     contract_date: Date;

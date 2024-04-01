@@ -15,25 +15,16 @@ import { OnInit } from '@angular/core';
 export class UserDetailComponent  implements OnInit {
 
   user: User | undefined;
-customer: any;
-installation_addres: any;
-account_number: any;
-m2: any;
-electric_car: any;
-  constructor(private httpClient: HttpClient,
+
+  constructor(private http: HttpClient,
     private activatedRoute: ActivatedRoute) {}
   
-ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params => {
-      const id = params['id'];
-      if(!id) {
-        return; 
+    ngOnInit(): void {
+      this.activatedRoute.params.subscribe(params => {
+      let id = params['id'];
+      this.http.get<User>('http://localhost:3000/user/' + id)
+      .subscribe(user => this.user = user);
+      });
       }
-
-      this.httpClient.get<User>(`http://localhost:3000/users/${id}`)
-        .subscribe(user => this.user = user);
-
-});
-}
 
 }

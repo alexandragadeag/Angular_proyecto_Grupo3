@@ -1,25 +1,23 @@
 import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { User } from './user.model';
 import { Repository } from 'typeorm';
-
-@Controller('users')
+import { User } from './user.model';
+@Controller('user')
 export class UserController {
 
     constructor(
-        @InjectRepository(User) private userRepo: Repository<User>
+        @InjectRepository(User) private userRepository: Repository<User>
     ){}
 
     @Get()
-    findAll(): Promise<User[]> {
-        
-        return this.userRepo.find();
+    findAll() {
+           return this.userRepository.find();
     }
 
     @Get(':id')
     findById( @Param('id', ParseIntPipe) id: number ) {
         
-        return this.userRepo.findOne({
+        return this.userRepository.findOne({
             where: {
                 id: id
             }
