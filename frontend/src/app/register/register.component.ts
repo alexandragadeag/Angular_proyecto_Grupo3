@@ -37,13 +37,13 @@ export class RegisterComponent {
    save(){
  
      let register: Register = {
-       nickname: this.registerForm.get('nickname')?.value?? '',
+       //nickname: this.registerForm.get('nickname')?.value?? '',
        email: this.registerForm.get('email')?.value?? '',
-       phone: this.registerForm.get('phone')?.value?? '',
+       //phone: this.registerForm.get('phone')?.value?? '',
        password: this.registerForm.get('password')?.value?? '',
  
      };
-     let url = 'http://localhost:3000/register';
+     let url = 'http://localhost:3000/user/register';
      this.httpClient.post<Register>(url,register)
                      .subscribe(res => {
                        console.log(res);

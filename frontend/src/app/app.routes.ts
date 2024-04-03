@@ -19,6 +19,8 @@ export const route: Routes = [
     { path: '', component: HomeComponent },
     { path: 'users', component: UserListComponent },
     { path: 'users/detail', component: UserDetailComponent },
+    { path: 'users/:id/update', component: UserDetailComponent },
+    { path: 'users/create', component: UserDetailComponent},
     { path: 'plans', component:PlanListComponent },
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
@@ -31,7 +33,9 @@ export const route: Routes = [
     { path: 'products', component: ProductListComponent},
     { path: 'products/create', component: ProductFormComponent},
     { path: 'products/:id/update', component: ProductFormComponent},
-    { path: 'products/:id/detail', component: ProductDetailComponent}
+    { path: 'products/:id/detail', component: ProductDetailComponent},
+    { path: 'register', component: RegisterComponent},
+    { path: 'login', component: LoginComponent},
     
     
 ];
