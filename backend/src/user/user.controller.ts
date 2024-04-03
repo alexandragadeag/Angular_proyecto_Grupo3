@@ -28,7 +28,15 @@ export class UserController {
             customer_email: register.email,
             password: register.password,
             customer_phone: '',
-            role: Role.USER
+            role: Role.USER,
+            customer_name: '',
+            nif_cif: '',
+            installation_address: '',
+            contract_date: undefined,
+            account_number: 0,
+            m2: 0,
+            members: 0,
+            electric_car: false
         };
         await this.userRepository.save(user);
     } 
