@@ -16,9 +16,14 @@ import { MulterModule } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { extname } from 'path';
 import { v4 as uuidv4 } from 'uuid';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
+    JwtModule.register({
+      secret: 'admin',
+      signOptions: {expiresIn: '7d'}
+    }),
     MulterModule.register({
       storage: diskStorage({
         // carpeta destino donde guardar los archivos

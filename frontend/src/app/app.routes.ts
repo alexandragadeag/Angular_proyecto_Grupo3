@@ -1,7 +1,5 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { UserDetailComponent } from './user-detail/user-detail.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PlanListComponent } from './plan-list/plan-list.component';
@@ -17,14 +15,9 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 
 export const route: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'users', component: UserListComponent },
-    { path: 'users/detail', component: UserDetailComponent },
-    { path: 'users/:id/update', component: UserDetailComponent },
-    { path: 'users/create', component: UserDetailComponent},
     { path: 'plans', component:PlanListComponent },
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
-    { path: 'users/detail/:id', component: UserDetailComponent},
     { path: 'budget', component: BudgetComponent},
     { path: 'knowing',component: KnowingComponent},
     { path: 'donation',component: DonationComponent},
@@ -34,8 +27,6 @@ export const route: Routes = [
     { path: 'products/create', component: ProductFormComponent},
     { path: 'products/:id/update', component: ProductFormComponent},
     { path: 'products/:id/detail', component: ProductDetailComponent},
-    { path: 'register', component: RegisterComponent},
-    { path: 'login', component: LoginComponent},
-    
+      
     
 ];

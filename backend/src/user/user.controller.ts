@@ -1,97 +1,76 @@
-import { Controller, Get, Param, Body, Post, ConflictException, NotFoundException } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { User } from './user.model';
+import { Body, ConflictException, Controller, NotFoundException, Post, UnauthorizedException } from '@nestjs/common';
 import { Register } from './register.dto';
-import { Role } from './role.enums';
+import { InjectRepository } from '@nestjs/typeorm';
+import { User } from './user.model';
+import { Repository } from 'typeorm';
+
 import { Login } from './login.dto';
 import { JwtService } from '@nestjs/jwt';
+import { Role } from './role.enums';
+
 @Controller('user')
 export class UserController {
+
 
     constructor(
         @InjectRepository(User) private userRepository: Repository<User>,
         private jwtService: JwtService
-    ){}
-
-    @Post ('register')
+    ) {}
+    
+    @Post('register')
     async register(@Body() register: Register) {
-        const exists = await this.userRepository.existsBy({
-            customer_email: register.email
         
+        const exists = await this.userRepository.existsBy({
+            email: register.email
         });
-        if (exists) 
-        throw new ConflictException('Email ocupado');
 
+        if(exists)
+            throw new ConflictException("Email ocupado");
+
+        // crear usuario en base de datos
         const user: User = {
             id: 0,
-            customer_email: register.email,
+            email: register.email,
             password: register.password,
-            customer_phone: '',
-            role: Role.USER,
-            customer_name: '',
-            nif_cif: '',
-            installation_address: '',
-            contract_date: undefined,
-            account_number: 0,
-            m2: 0,
-            members: 0,
-            electric_car: false
+            phone: '',
+            role: Role.USER
         };
         await this.userRepository.save(user);
-    } 
+    }
 
     @Post('login')
     async login(@Body() login: Login) {
+
+        // comprobar si el email existe
         const exists = await this.userRepository.existsBy({
-            customer_email: login.email
-          
+             email: login.email
         });
+        if(!exists)
+            throw new NotFoundException("Usuario no encontrado."); // 404
+        // Recuperar el usuario
+          const user = await this.userRepository.findOne({
+              where: {
+                email: login.email
+              }
+          });
 
-        
-        const user = await this.userRepository.findOne({
-            where: {
-                customer_email: login.email,
-          
-            }
-        });
-        if (!exists) {
-            throw new ConflictException('Usuario no encontrado');
+        // Comparar contraseñas
+        if (user.password !== login.password) {
+             // si no coinciden lanzar UnauthorizedException
+            throw new UnauthorizedException("Credenciales icorrectas"); // 401
         }
+           
 
-        if (login.password !== user.password) {
-            throw new ConflictException('Contraseña incorrecta');
+        // Crear y devolver token de acceso
+        let userData = {
+            sub: user.id,
+            email: user.email,
+            role: user.role
+        };
+        let token = {
+            token: await this.jwtService.signAsync(userData)
         }
-    
-
-    let userData = {
-        sub: user.id,
-        email: user.customer_email,
-        role: user.role
-    };
-
-    let token = {
-        token: await this.jwtService.signAsync(userData)
-    }
-    return token;
-    }
-
-
-        
-    @Get()
-    findAll() {
-           return this.userRepository.find();
-    }
-
-    @Get(':id')
-    findById( @Param('id') id: number ) {
-        
-        return this.userRepository.findOne({
-            where: {
-                id: id
-            }
-        });
+        return token;
     }
     
 }
-
