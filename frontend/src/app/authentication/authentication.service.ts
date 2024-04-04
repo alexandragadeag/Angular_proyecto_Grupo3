@@ -23,4 +23,9 @@ export class AuthenticationService {
     this.isLoggedIn.next(true);
   }
 
+  logout() {
+    localStorage.removeItem("jwt_token");
+    this.isLoggedIn.next(false);
+  }
+
 }

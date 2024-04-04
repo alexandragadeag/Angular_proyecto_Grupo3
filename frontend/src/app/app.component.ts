@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationService } from './authentication/authentication.service';
 @Component({
@@ -15,8 +15,16 @@ export class AppComponent {
 
   isLoggedIn = false;
 
-  constructor(private authService: AuthenticationService) {
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router
+    ) {
     // Esto permite que el componente Navbar se entere de que ha ocurrido un login exitoso
     this.authService.isLoggedIn.subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn);
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }
