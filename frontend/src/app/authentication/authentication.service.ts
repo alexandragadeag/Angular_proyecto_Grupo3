@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AuthenticationService {
 
-  // Comprueba si un usuario ya está loqueado, es decir, existen token
+  // Comprueba si un usuario ya está logueado, es decir, existe token
   // Notifica a quien se haya suscrito a este booleano de que ha ocurrido un login
   isLoggedIn = new BehaviorSubject<boolean>(this.hasToken());
 
@@ -18,14 +18,9 @@ export class AuthenticationService {
   }
 
   handleLogin(token: string) {
-    // guardar el token en el almacenamiento del navegador 
+    // guardar el token en el almacenamiento del navegador
     localStorage.setItem("jwt_token", token);
     this.isLoggedIn.next(true);
   }
 
-  logout() {
-    localStorage.removeItem("jwt_token");
-    this.isLoggedIn.next(false);
-
-  }
 }
