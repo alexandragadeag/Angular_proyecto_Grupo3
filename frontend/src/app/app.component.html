@@ -47,7 +47,9 @@
 			</ul>
 
 			@if(isLoggedIn) {
-				<button type="button" class="btn btn-warning ms-2">Logout</button>
+				<button type="button" class="btn btn-warning ms-2" (click)="logout()">
+					Logout
+				</button>
 			  } @else {
 			<button type="button" class="btn btn-purple ms-4 me-4" routerLink="/login">Iniciar sesión</button>
 			  }
