@@ -1,4 +1,15 @@
 <main class="form-signin w-100 m-auto">
+
+  @if (showConfirmMessage) {
+    <ngb-alert type="success" [dismissible]="false" class="text-center" style="min-height:100px">
+     Se ha completado el registro correctamente.
+     <br>
+     Nos pondremos en contacto, lo antes posible.
+    </ngb-alert>
+    <button class="w-100 btn btn-purple btn-lg px-4" routerLink="/home">Ir a la página de incio</button>
+
+
+  } @else {
     <form [formGroup]="registerForm" (ngSubmit)="save()">
       <h1 class="h3 mb-3 fw-normal m-4">Crear cuenta</h1>
  
@@ -57,5 +68,6 @@
 }
       
     </form>
+  }
   </main>
 
