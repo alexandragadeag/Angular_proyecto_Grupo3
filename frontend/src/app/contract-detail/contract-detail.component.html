@@ -10,15 +10,15 @@
       <div class="col-4 text-center">
   
   
-        <div>
-          <img class="img-fluid" src="https://ui-avatars.com/api/?name=A&size=256">
+        <div class="contenedor">
+          <img class="img-fluid" src="/assets/img/Contrato.png">
   
         </div>
   
         @if(contract){
           <div>
-        <button class="btn btn-primary"
-        [routerLink]="['']" >Descargar contrato</button>
+        <a class="btn btn-primary mt-4"
+        href="/assets/pdf/Contrato.pdf"  target="_black" >Descargar contrato</a>
           </div>
         }
   
