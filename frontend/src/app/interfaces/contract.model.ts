@@ -1,6 +1,3 @@
-import { Budget } from "./budget.model";
-
-
 export interface Contract {
     id: number;
 
