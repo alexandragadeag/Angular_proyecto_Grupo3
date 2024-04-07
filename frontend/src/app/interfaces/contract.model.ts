@@ -14,5 +14,5 @@ export interface Contract {
     
     // asociaciones
 
-    budget: Budget;// Many To One
+    //budget: Budget;// Many To One
 }

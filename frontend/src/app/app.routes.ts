@@ -11,7 +11,7 @@ import { ContractListComponent } from './contract-list/contract-list.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-
+import { ContractFormComponent } from './contract-form/contract-form.component';
 
 export const route: Routes = [
     { path: '', component: HomeComponent },
@@ -27,6 +27,7 @@ export const route: Routes = [
     { path: 'products/create', component: ProductFormComponent},
     { path: 'products/:id/update', component: ProductFormComponent},
     { path: 'products/:id/detail', component: ProductDetailComponent},
-      
+    { path: 'contracts/create', component: ContractFormComponent},
+    { path: 'contracts/:id/update', component: ContractFormComponent},
     
 ];
