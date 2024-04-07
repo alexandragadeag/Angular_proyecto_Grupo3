@@ -28,6 +28,7 @@ export class ContractFormComponent implements OnInit{
 
   isUpdate: boolean = false;
   contract: Contract | undefined;
+  showConfirmMessage: boolean | undefined;
   
   constructor(private httpClient: HttpClient,
   private activatedRoute: ActivatedRoute, 
@@ -42,7 +43,7 @@ export class ContractFormComponent implements OnInit{
       
          this.isUpdate = true;
   
-        this.contractForm.reset({
+          this.contractForm.reset({
           id:contract.id,
           duration: contract.duration,
           discount: contract.discount,
@@ -73,19 +74,34 @@ save(): void {
 
   };
 
+  let url = 'http://localhost:3000/contract';
+      this.httpClient.post<Contract>(url,contract)
+                      .subscribe(res => {
+                        console.log(res);
+                        this.showConfirmMessage = true;
+                      });
+
+      this.httpClient.put<Contract>(url,contract)
+                      .subscribe(res => {
+                        console.log(res);
+                        this.showConfirmMessage = true;
+                      });
+
+
   console.log(contract);
 
   if(this.isUpdate){
-    // ACTUALIZAR UN PRODUCTO EXISTENTE
+    // ACTUALIZAR UN CONTRATO EXISTENTE
     const urlForUpdate = 'http://localhost:3000/contracts/' + contract.id;
     this.httpClient.put<Contract>(urlForUpdate, contract).subscribe(data => this.router.navigate(['/']));
   } else {
-    // CREAR UN NUEVO PRODUCTO
+    // CREAR UN NUEVO CONTRATO 
     const url = 'http://localhost:3000/contracts';
     this.httpClient.post<Contract>(url, contract).subscribe(data => this.router.navigate(['/']));
   }
 
 }
+
 
 
 }
