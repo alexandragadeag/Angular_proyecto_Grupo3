@@ -5,7 +5,7 @@
          <!-- Mostrar "creación" o "acualización" si ya existe el producto-->
             
          @if(isUpdate){
-            <h1 class="mt-5">Editar contrato</h1> 
+            <h1 class="mt-5">Editar contrato existente</h1> 
         } @else {
             <h1 class="mt-5">Crear nuevo contrato</h1>
         }
@@ -60,11 +60,8 @@
 
           
           <div class="form-check mb-3">
-            <input class="form-check-input" type="checkbox" id="active" formControlName="active">
-
-            <label class="form-check-label" for="active">
-                Este contrato está activo
-            </label>
+            <input class="form-check-input custom-checkbox" type="checkbox" id="active" formControlName="active">
+            <label class="form-check-label" for="active">Este contrato está activo</label>
         </div>
   
          <button class="w-100 btn btn-purple btn-lg mb-3" type="submit">Guardar</button>

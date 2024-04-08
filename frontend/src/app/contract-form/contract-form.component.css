@@ -1,0 +1,10 @@
+.custom-checkbox {
+    width: 18px; /* Reducir el ancho del checkbox */
+    height: 18px; /* Reducir la altura del checkbox */
+    margin-right: 5px; /* Ajustar el espacio entre el checkbox y el texto */
+    border-color: #7e1fcd; /* Cambiar el color del borde del checkbox */
+}
+
+.custom-checkbox:checked {
+    background-color: #7e1fcd; /* Cambiar el color de fondo del checkbox cuando está seleccionado */
+}
