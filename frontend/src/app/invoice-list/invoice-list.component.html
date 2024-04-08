@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+  
+        <h1 class="mt-5">Listado de facturas</h1>
+  
+        <table class="table table-striped mt-5">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Número de contrato</th>
+              <th scope="col">Precio kw</th>
+              <th scope="col">Fecha de emisión</th>
+              <th scope="col">Fecha de inicio periodo facturado</th>
+              <th scope="col">Fecha de finalización periodo facturado</th>
+              <th scope="col">Precio total</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ngFor="let invoice of invoices; trackBy: invoice.id">
+            <tr>
+              <td>{{invoice.id}}</td>
+              <td>{{invoice.numberCode}}</td>
+              <td>{{invoice.price}}</td>
+              <td>{{invoice.emitDate}}</td>
+              <td>{{invoice.endDate}}</td>
+              <td>{{invoice.totalPrice}}</td>
+                <td>
+
+
+
+                <button class="btn btn-info me-2 btn-sm" [routerLink]="['/invoices', 'detail', invoice.id]">
+                  Ver 
+                </button>
+                <button class="btn btn-danger me-2 btn-sm" (click)="delete(invoice)">
+                  Desactivar
+                </button>
+              </td>
+             
+
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+

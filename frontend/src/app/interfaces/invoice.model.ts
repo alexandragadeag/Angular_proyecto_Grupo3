@@ -9,6 +9,7 @@ export interface Invoice {
     // periodo facturado:
     startDate: Date;
     endDate: Date;
+    totalPrice: number;
 
     //Realizar calculo 
 
