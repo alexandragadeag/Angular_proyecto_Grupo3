@@ -14,6 +14,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 import { InvoicetDetailComponent } from './invoice-detail/invoice-detail.component';
 
+import { ContractFormComponent } from './contract-form/contract-form.component';
 
 export const route: Routes = [
     { path: '', component: HomeComponent },
@@ -32,5 +33,7 @@ export const route: Routes = [
     { path: 'invoices', component: InvoiceListComponent},
     { path: 'invoices/:id/detail', component: InvoicetDetailComponent},
       
+    { path: 'contracts/create', component: ContractFormComponent},
+    { path: 'contracts/:id/update', component: ContractFormComponent},
     
 ];

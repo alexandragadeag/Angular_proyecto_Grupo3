@@ -1,6 +1,3 @@
-import { Budget } from "./budget.model";
-
-
 export interface Contract {
     id: number;
 
@@ -14,5 +11,5 @@ export interface Contract {
     
     // asociaciones
 
-    budget: Budget;// Many To One
+    //budget: Budget;// Many To One
 }

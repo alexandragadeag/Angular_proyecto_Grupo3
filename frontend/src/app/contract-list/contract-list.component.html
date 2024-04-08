@@ -8,6 +8,10 @@
         @if (showDeletedMessage) {
           <ngb-alert type="success" (closed)="closeMessage()">Contrato desactivado correctamente.</ngb-alert>
         }
+
+        <button class="btn btn-purple"
+        routerLink="/contracts/create">Crear contrato</button>
+  
         <table class="table table-striped mt-5">
           <thead>
             <tr>
@@ -45,6 +49,9 @@
 
                 <button class="btn btn-info me-2 btn-sm" [routerLink]="['/contracts', 'detail', contract.id]">
                   Ver 
+                </button>
+                <button class="btn btn-purple me-2 btn-sm" [routerLink]="['/contracts', contract.id, 'update']">
+                  Editar
                 </button>
                 <button class="btn btn-danger me-2 btn-sm" (click)="delete(contract)">
                   Desactivar
