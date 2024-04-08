@@ -9,7 +9,7 @@ import { Invoice } from '../interfaces/invoice.model';
   templateUrl: './invoice-detail.component.html',
   styleUrl: './invoice-detail.component.css'
 })
-export class InvoicetDetailComponent implements OnInit {
+export class InvoiceDetailComponent implements OnInit {
 
   invoice: Invoice | undefined;
   
