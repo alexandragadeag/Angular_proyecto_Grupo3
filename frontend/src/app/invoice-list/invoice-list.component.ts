@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Invoice } from '../interfaces/invoice.model';
 import { RouterLink } from '@angular/router';
@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-invoice-list',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, HttpClientModule],
   templateUrl: './invoice-list.component.html',
   styleUrl: './invoice-list.component.css'
 })
@@ -14,8 +14,7 @@ export class InvoiceListComponent implements OnInit {
 
   invoices: Invoice[] = [];
   showDeletedMessage: boolean = false;
-  invoicesFromBackend: Invoice[] = [];
-invoice: any;
+
 
   constructor(private httpClient: HttpClient) { }
 
@@ -25,7 +24,7 @@ invoice: any;
 
   loadInvoices() {
     this.httpClient.get<Invoice[]>('http://localhost:3000/invoice')
-      .subscribe(contractsFromBackend => this.invoices = this.invoicesFromBackend);
+      .subscribe(invoicesFromBackend => this.invoices = invoicesFromBackend);
   }
   delete(invoice: Invoice) {
     this.httpClient.delete('http://localhost:3000/invoice/' + invoice.id)

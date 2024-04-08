@@ -10,7 +10,6 @@
               <th scope="col">Id</th>
               <th scope="col">Número de contrato</th>
               <th scope="col">Precio kw</th>
-              <th scope="col">Fecha de emisión</th>
               <th scope="col">Fecha de inicio periodo facturado</th>
               <th scope="col">Fecha de finalización periodo facturado</th>
               <th scope="col">Precio total</th>
@@ -18,7 +17,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr ngFor="let invoice of invoices; trackBy: invoice.id">
+          @for (invoice of invoices; track invoice.id) {
             <tr>
               <td>{{invoice.id}}</td>
               <td>{{invoice.numberCode}}</td>
@@ -30,7 +29,7 @@
 
 
 
-                <button class="btn btn-info me-2 btn-sm" [routerLink]="['/invoices', 'detail', invoice.id]">
+                <button class="btn btn-info me-2 btn-sm" [routerLink]="['/invoices', invoice.id, 'detail']">
                   Ver 
                 </button>
                 <button class="btn btn-danger me-2 btn-sm" (click)="delete(invoice)">
@@ -40,6 +39,8 @@
              
 
             </tr>
+          }
+      
             
           </tbody>
         </table>
