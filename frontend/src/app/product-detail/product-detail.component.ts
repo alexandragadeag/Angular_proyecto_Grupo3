@@ -1,7 +1,8 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Product } from '../interfaces/product.model';
+import { AuthenticationService } from '../authentication/authentication.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,13 +12,16 @@ import { Product } from '../interfaces/product.model';
   styleUrl: './product-detail.component.css'
 })
 export class ProductDetailComponent implements OnInit{
-
+  
+  collapsed = true;
   product: Product | undefined;
   isAdmin = false;
 
   constructor(private httpClient: HttpClient,
-    private activatedRoute: ActivatedRoute) {
-      
+    private activatedRoute: ActivatedRoute,
+    private authService: AuthenticationService,
+    private router: Router) {
+      this.authService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin);
     }
 
   ngOnInit(): void {

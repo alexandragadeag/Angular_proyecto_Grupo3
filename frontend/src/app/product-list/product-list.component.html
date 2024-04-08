@@ -1,9 +1,10 @@
 <div class="container px-4 py-5" id="custom-cards">
     <h2 class="pb-2 border-bottom">Productos</h2>
-
+   
+    @if (isAdmin){
     <button class="btn btn-purple"
       routerLink="/products/create">Crear producto</button>
-
+    }
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
      
        @for (product of products; track product.id)  {
@@ -18,10 +19,13 @@
                     Ver
                     <i class="bi bi-eye"></i>
                 </button>
+                @if (isAdmin){
                 <button class="btn btn-primary btn-sm" [routerLink]="['/products', product.id, 'update']">
                   Editar
                   <i class="bi bi-pencil"></i>
               </button>
+            }
+            
               </li>
               <li class="d-flex align-items-center">
                 <i class="bi bi-currency-euro fs-5 me-2"></i>

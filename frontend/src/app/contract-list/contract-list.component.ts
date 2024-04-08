@@ -1,8 +1,9 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Contract } from '../interfaces/contract.model';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { AuthenticationService } from '../authentication/authentication.service';
 
 @Component({
   selector: 'app-contract-list',
@@ -15,8 +16,16 @@ export class ContractListComponent implements OnInit {
 
   contracts: Contract[] = [];
   showDeletedMessage: boolean = false;
+  collapsed = true;
+  isAdmin = false;
 
-  constructor(private httpClient: HttpClient) { }
+
+  constructor(private httpClient: HttpClient,
+    private authService: AuthenticationService,
+    private router: Router
+  ) { 
+    this.authService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin);
+  }
 
   ngOnInit(): void {
     this.loadContracts();

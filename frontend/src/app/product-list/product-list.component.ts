@@ -1,7 +1,8 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Product } from '../interfaces/product.model';
+import { AuthenticationService } from '../authentication/authentication.service';
 
 @Component({
   selector: 'app-product-list',
@@ -13,8 +14,14 @@ import { Product } from '../interfaces/product.model';
 export class ProductListComponent implements OnInit{
     
   products: Product[] = [];
+  isAdmin = false;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient,
+    private authService: AuthenticationService,
+    private router: Router
+  ) {
+    this.authService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin);
+  }
    
   
   ngOnInit(): void {

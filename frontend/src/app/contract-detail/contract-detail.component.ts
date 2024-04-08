@@ -1,9 +1,10 @@
 import { DatePipe } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 import { Contract } from '../interfaces/contract.model';
+import { AuthenticationService } from '../authentication/authentication.service';
 
 @Component({
   selector: 'app-contract-detail',
@@ -15,9 +16,20 @@ import { Contract } from '../interfaces/contract.model';
 export class ContractDetailComponent implements OnInit {
 
   contract: Contract | undefined;
-  
+  collapsed = true;
+  isAdmin = false;
+
   constructor(private http: HttpClient,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private authService: AuthenticationService,
+    private router: Router
+  ) { 
+    
+    this.authService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin);
+
+  }
+      
+      
     
     ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
