@@ -45,6 +45,12 @@
 				</li>
 
 			</ul>
+			@if (userEmail) {
+
+				<!-- <button class="btn btn-outline-success btn-sm mx-3">Cuenta {{userEmail.split('@')[0]}}</button> -->
+				<button class="btn btn-outline-success btn-sm mx-3">{{userEmail}}</button>
+	 
+			 }
 
 			@if(isLoggedIn) {
 				<button type="button" class="btn btn-purple ms-2" (click)="logout()">
