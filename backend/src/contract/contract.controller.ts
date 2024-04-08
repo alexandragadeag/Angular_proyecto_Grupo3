@@ -1,4 +1,4 @@
-import { ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe } from '@nestjs/common';
+import { Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
 import { Contract } from './contract.model';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -24,6 +24,31 @@ export class ContractController {
                 id: id
             }
         });
+    }
+
+    @Post()
+    create(@Body() contract: Contract) {
+        return this.contractRepository.save(contract);
+    }
+
+    // async viene de asíncrono, para poder ejecutar await
+    @Put(':id')
+    async update(
+        @Param('id', ParseIntPipe) id: number,
+        @Body() contract: Contract
+        ) {
+            
+            // await espera a que el método existsBy termine ya que devuelve Promise<boolean>
+            const exists = await this.contractRepository.existsBy({
+               id: id
+            });
+
+            if(!exists) {
+                throw new NotFoundException('Book not found');
+            }
+
+            return this.contractRepository.save(contract);
+
     }
 
 

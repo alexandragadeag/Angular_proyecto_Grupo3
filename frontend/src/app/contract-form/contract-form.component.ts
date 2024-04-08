@@ -19,9 +19,9 @@ export class ContractFormComponent implements OnInit{
     duration: new FormControl(''),
     discount: new FormControl(0.0),
     startDate: new FormControl(),
-    endtDate: new FormControl(),
+    endDate: new FormControl(),
     bankAccountNumber: new FormControl(''),
-    paymentFrequenc: new FormControl(0.0),
+    paymentFrequency: new FormControl(0.0),
     active: new FormControl(false) // Agrega un nuevo FormControl para el campo 'active' con valor inicial false
     
   });
@@ -39,7 +39,7 @@ export class ContractFormComponent implements OnInit{
 
     this.activatedRoute.params.subscribe(params => {
       let id =params['id'];
-      this.httpClient.get<Contract>(`http://localhost:3000/contracts/${id}`).subscribe(contract => {
+      this.httpClient.get<Contract>(`http://localhost:3000/contract/${id}`).subscribe(contract => {
       
          this.isUpdate = true;
   
@@ -48,9 +48,9 @@ export class ContractFormComponent implements OnInit{
           duration: contract.duration,
           discount: contract.discount,
           startDate: contract.startDate,
-          endtDate: contract.endDate,
+          endDate: contract.endDate,
           bankAccountNumber: contract.bankAccountNumber,
-          paymentFrequenc: contract.paymentFrequency,
+          paymentFrequency: contract.paymentFrequency,
           active: contract.active
         });
 
@@ -74,29 +74,13 @@ save(): void {
 
   };
 
-  let url = 'http://localhost:3000/contract';
-      this.httpClient.post<Contract>(url,contract)
-                      .subscribe(res => {
-                        console.log(res);
-                        this.showConfirmMessage = true;
-                      });
-
-      this.httpClient.put<Contract>(url,contract)
-                      .subscribe(res => {
-                        console.log(res);
-                        this.showConfirmMessage = true;
-                      });
-
-
-  console.log(contract);
-
   if(this.isUpdate){
     // ACTUALIZAR UN CONTRATO EXISTENTE
-    const urlForUpdate = 'http://localhost:3000/contracts/' + contract.id;
+    const urlForUpdate = 'http://localhost:3000/contract/' + contract.id;
     this.httpClient.put<Contract>(urlForUpdate, contract).subscribe(data => this.router.navigate(['/']));
   } else {
     // CREAR UN NUEVO CONTRATO 
-    const url = 'http://localhost:3000/contracts';
+    const url = 'http://localhost:3000/contract';
     this.httpClient.post<Contract>(url, contract).subscribe(data => this.router.navigate(['/']));
   }
 

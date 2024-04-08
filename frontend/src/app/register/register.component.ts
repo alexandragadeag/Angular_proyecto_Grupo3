@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Register } from '../interfaces/register.model';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -27,7 +27,8 @@ export class RegisterComponent {
   );
 
   constructor(private fb: FormBuilder,
-    private httpClient: HttpClient) {}
+    private httpClient: HttpClient,
+  private router: Router) {}
 
     // Método personalizado para validar si la contraseña es igual a la confirmación de contraseña
   passwordConfirmValidator(control: AbstractControl){
@@ -53,6 +54,7 @@ export class RegisterComponent {
     this.httpClient.post<Register>(url, register)
                     .subscribe(res => {
                       console.log(res);
+                      this.router.navigate(['/login']);
                     });
 
 

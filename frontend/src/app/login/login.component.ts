@@ -36,7 +36,7 @@ export class LoginComponent {
     this.httpClient.post<Token>(url, login).subscribe(data => {
       console.log(data.token);
       this.authService.handleLogin(data.token);
-      this.router.navigate(['/home']);
+      this.router.navigate(['/']);
     });
   }
 }
