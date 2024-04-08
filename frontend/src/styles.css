@@ -27,3 +27,8 @@ h1 {
   background-color: #9b30ff; /* Púrpura más claro al pasar el ratón */
   border-color: #9b30ff; /* Púrpura más claro al pasar el ratón */
 }
+
+.btn-purple-soft {
+  background-color: #9b30ff;
+  border-color: #7e1fcd
+}
