@@ -31,8 +31,7 @@ export const route: Routes = [
     { path: 'products/:id/update', component: ProductFormComponent},
     { path: 'products/:id/detail', component: ProductDetailComponent},
     { path: 'invoices', component: InvoiceListComponent},
-    { path: 'invoices/:id/detail', component: InvoiceDetailComponent},
-      
+    { path: 'invoices/:id/detail', component: InvoiceDetailComponent}, 
     { path: 'contracts/create', component: ContractFormComponent},
     { path: 'contracts/:id/update', component: ContractFormComponent},
     
