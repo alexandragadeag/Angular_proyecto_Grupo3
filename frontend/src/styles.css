@@ -30,5 +30,9 @@ h1 {
 
 .btn-purple-soft {
   background-color: #9b30ff;
-  border-color: #7e1fcd
+  border-color: #9b30ff
+}
+
+.btn-white{
+  background-color: white;
 }
