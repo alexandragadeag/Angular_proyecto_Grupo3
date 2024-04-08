@@ -13,8 +13,8 @@ import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 import { InvoiceDetailComponent } from './invoice-detail/invoice-detail.component';
-
 import { ContractFormComponent } from './contract-form/contract-form.component';
+import { roleAdminGuard } from './authentication/role.guard';
 
 export const route: Routes = [
     { path: '', component: HomeComponent },
@@ -27,12 +27,20 @@ export const route: Routes = [
     { path: 'contracts/detail/:id', component: ContractDetailComponent},
     { path: 'contracts', component: ContractListComponent},
     { path: 'products', component: ProductListComponent},
-    { path: 'products/create', component: ProductFormComponent},
-    { path: 'products/:id/update', component: ProductFormComponent},
+    { path: 'products/create', component: ProductFormComponent,
+    canActivate: [roleAdminGuard]
+    },
+    { path: 'products/:id/update', component: ProductFormComponent,
+    canActivate: [roleAdminGuard]
+    },
     { path: 'products/:id/detail', component: ProductDetailComponent},
     { path: 'invoices', component: InvoiceListComponent},
     { path: 'invoices/:id/detail', component: InvoiceDetailComponent}, 
-    { path: 'contracts/create', component: ContractFormComponent},
-    { path: 'contracts/:id/update', component: ContractFormComponent},
+    { path: 'contracts/create', component: ContractFormComponent,
+    canActivate: [roleAdminGuard]
+    },
+    { path: 'contracts/:id/update', component: ContractFormComponent,
+    canActivate: [roleAdminGuard]
+    },
     
 ];

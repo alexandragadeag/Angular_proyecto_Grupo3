@@ -20,7 +20,7 @@ export class ProductListComponent implements OnInit{
     private authService: AuthenticationService,
     private router: Router
   ) {
-    this.authService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin);
+     this.authService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin);
   }
    
   
