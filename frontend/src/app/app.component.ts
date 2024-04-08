@@ -15,6 +15,8 @@ export class AppComponent {
   collapsed = true;
   isLoggedIn = false;
   userEmail: string | undefined;
+  isAdmin = false;
+
 
   constructor(
     private authService: AuthenticationService,
@@ -23,6 +25,7 @@ export class AppComponent {
     // Esto permite que el componente Navbar se entere de que ha ocurrido un login exitoso
     this.authService.isLoggedIn.subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn);
     this.authService.userEmail.subscribe(userEmail => this.userEmail = userEmail);
+    this.authService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin);
   }
 
   logout() {

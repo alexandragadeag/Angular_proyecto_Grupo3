@@ -13,10 +13,12 @@ import { Product } from '../interfaces/product.model';
 export class ProductDetailComponent implements OnInit{
 
   product: Product | undefined;
-  
+  isAdmin = false;
 
   constructor(private httpClient: HttpClient,
-    private activatedRoute: ActivatedRoute) {}
+    private activatedRoute: ActivatedRoute) {
+      
+    }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
