@@ -21,19 +21,19 @@
                 @if(invoice) {
 
                 <div class="container px-4 py-5" id="icon-grid">
-                    <h2 class="pb-2 border-bottom">Factura con id {{invoice.id}}</h2>
+                    <h2 class="pb-2 border-bottom">Factura {{invoice.id}}</h2>
 
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
                         <div class="col d-flex align-items-start">
                             <div>
-                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Número de contrato</h3>
+                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Contrato</h3>
                                 <p>{{invoice.numberCode}}</p>
                             </div>
                         </div>
                         <div class="col d-flex align-items-start">
                          
                             <div>
-                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Precio Kw</h3>
+                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Kw</h3>
                                 <p>{{invoice.price}}</p>
                             </div>
                         </div>
@@ -43,14 +43,14 @@
                             <div class="col d-flex align-items-start">
                            
                                 <div>
-                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Fecha de inicio </h3>
+                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Inicio </h3>
                                     <p>{{invoice.startDate}}</p>
                                 </div>
                             </div>
                             <div class="col d-flex align-items-start">
                             
                                 <div>
-                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Fecha final</h3>
+                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Final</h3>
                                     <p>{{invoice.endDate}}</p>
                                 </div>
                             </div>
