@@ -10,13 +10,13 @@
 
                 @if(invoice){
                 <div>
-                    <button class="btn btn-primary" [routerLink]="'../assets/pdf/factura.pdf'">Descargar
-                        Factura</button>
+                    <a class="btn btn-purple me-2 btn-sm" 
+                    href="/assets/pdf/factura.pdf" target="_blank">Descargar Factura</a>
                 </div>
                 }
 
             </div>
-            <div class="col-8">
+            <div class="col-4">
 
                 @if(invoice) {
 
@@ -25,43 +25,40 @@
 
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
                         <div class="col d-flex align-items-start">
-                            <i class="bi bi-calendar-week text-info flex-shrink-0 me-3 fs-2"></i>
                             <div>
                                 <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Número de contrato</h3>
                                 <p>{{invoice.numberCode}}</p>
                             </div>
                         </div>
                         <div class="col d-flex align-items-start">
-                            <i class="bi bi-percent text-info flex-shrink-0 me-3 fs-2"></i>
+                         
                             <div>
-                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Precio</h3>
+                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Precio Kw</h3>
                                 <p>{{invoice.price}}</p>
                             </div>
                         </div>
                         <div class="col d-flex align-items-start">
-                            <i class="bi bi-calendar2-check-fill text-info flex-shrink-0 me-3 fs-2"></i>
+               
 
                             <div class="col d-flex align-items-start">
-                                <i class="bi bi-calendar2-minus-fill text-info flex-shrink-0 me-3 fs-2"></i>
+                           
                                 <div>
-                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Fecha de inicio periodo facturado
-                                    </h3>
+                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Fecha de inicio </h3>
                                     <p>{{invoice.startDate}}</p>
                                 </div>
                             </div>
                             <div class="col d-flex align-items-start">
-                                <i class="bi bi-person-vcard text-info flex-shrink-0 me-3 fs-2"></i>
+                            
                                 <div>
-                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Fecha de finalización periodo
-                                        facturado</h3>
+                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Fecha final</h3>
                                     <p>{{invoice.endDate}}</p>
                                 </div>
                             </div>
 
                             <div class="col d-flex align-items-start">
-                                <i class="bi bi-credit-card-2-back text-info flex-shrink-0 me-3 fs-2"></i>
+                            
                                 <div>
-                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Precio total</h3>
+                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Total</h3>
                                     <p>{{invoice.totalPrice}}</p>
                                 </div>
                             </div>
