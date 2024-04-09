@@ -25,7 +25,17 @@
               <td>{{invoice.emitDate}}</td>
               <td>{{invoice.endDate}}</td>
               <td>{{invoice.totalPrice}}</td>
-                <td>
+                
+              <td>
+                @if (invoice.active) {
+                  <span class="badge text-bg-success">Sí</span>
+                } @else {
+                  <span class="badge text-bg-danger">No</span>
+                }
+              </td>
+              
+              
+              <td>
 
 
 

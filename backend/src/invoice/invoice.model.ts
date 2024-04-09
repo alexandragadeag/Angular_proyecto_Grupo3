@@ -22,6 +22,9 @@ export class Invoice {
     @Column()
     totalPrice: number;
 
+    @Column()
+    active: boolean;
+
 
     @ManyToOne(() => Contract, {eager:true})
     contract: Contract;

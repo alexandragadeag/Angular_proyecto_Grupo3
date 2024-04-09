@@ -10,8 +10,9 @@ export interface Invoice {
     startDate: Date;
     endDate: Date;
     totalPrice: number;
+    active: boolean;
 
     //Realizar calculo 
 
-    contract: Contract;
+    //contract: Contract; 
 }

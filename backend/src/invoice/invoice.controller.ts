@@ -6,14 +6,14 @@ import { Post, Body } from '@nestjs/common';
 
 @Controller('invoice')
 export class InvoiceController {
-    
+
     @Post()
     create(@Body() invoice: Invoice) {
         return this.invoiceRepository.save(invoice);
     }
     constructor(
         @InjectRepository(Invoice) private invoiceRepository: Repository<Invoice>
-    ) {}
+    ) { }
 
 
     @Get()
@@ -25,7 +25,7 @@ export class InvoiceController {
     findOne(@Param('id') id: number) {
         return this.invoiceRepository.findOne({ where: { id } });
     }
-        
+
     @Get('filter-by-contract/:id')
     findByContractId(@Param('id', ParseIntPipe) id: number) {
 
@@ -38,7 +38,7 @@ export class InvoiceController {
         });
     }
 
-    
+
 }
 
 
