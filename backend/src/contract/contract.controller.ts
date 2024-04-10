@@ -1,7 +1,8 @@
-import { Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
+import { Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put, Request } from '@nestjs/common';
 import { Contract } from './contract.model';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { Role } from 'src/user/role.enums';
 
 @Controller('contract')
 export class ContractController {
@@ -25,6 +26,24 @@ export class ContractController {
             }
         });
     }
+
+     // Este método es más seguro para obtener los contratos del usuario autenticado
+     @Get('filter-by-current-user')
+     findByCurrentUserId(@Request() request) {
+ 
+         if (request.user.role === Role.ADMIN) {
+             return this.contractRepository.find();
+         } else {
+             return this.contractRepository.find({
+                 where: {
+                     user: {
+                         id: request.user.id
+                     }
+                 }
+             });
+         }
+ 
+     }   
 
     @Post()
     create(@Body() contract: Contract) {
