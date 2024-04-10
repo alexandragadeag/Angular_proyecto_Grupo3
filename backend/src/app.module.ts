@@ -17,9 +17,12 @@ import { diskStorage } from 'multer';
 import { extname } from 'path';
 import { v4 as uuidv4 } from 'uuid';
 import { JwtModule } from '@nestjs/jwt';
+import { PassportModule } from '@nestjs/passport';
+import { JwtValidator } from './user/jwt.validator';
 
 @Module({
   imports: [
+    PassportModule, // módulo de autenticación
     JwtModule.register({
       secret: 'admin',
       signOptions: {expiresIn: '7d'}
@@ -51,7 +54,8 @@ import { JwtModule } from '@nestjs/jwt';
     
   ],
   controllers: [AppController, UserController, BudgetController, ContractController, InvoiceController, ProductController],
-  providers: [AppService],
+  // Clase personalizada para validar y verificar token JWT
+  providers: [AppService, JwtValidator],
 })
 export class AppModule 
 {
