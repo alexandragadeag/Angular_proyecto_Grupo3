@@ -28,11 +28,9 @@ h1 {
   border-color: #9b30ff; /* Púrpura más claro al pasar el ratón */
 }
 
-.btn-purple-soft {
+.btn-purple2 {
+  color: #fff;
   background-color: #9b30ff;
-  border-color: #9b30ff
+  border-color: #9b30ff;
 }
 
-.btn-white{
-  background-color: white;
-}
