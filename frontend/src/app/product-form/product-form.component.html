@@ -7,7 +7,16 @@
       } @else {
           <h1 class="mt-5">Crear nuevo producto</h1>
       }
-  
+
+      @if (showConfirmMessage) {
+        <ngb-alert type="success" [dismissible]="false" class="text-center" style="min-height:100px">
+         Se ha completado el formulario correctamente.
+         <br>
+         Nos pondremos en contacto, lo antes posible.
+        </ngb-alert>
+        <button class="w-100 btn btn-purple btn-lg px-4" routerLink="/products">Volver a planes</button>
+        
+      } @else {
         <form [formGroup]="productForm" (submit)="save()">
   
           <div class="form-floating mb-3">
@@ -50,6 +59,7 @@
   
   
         </form>
+      }
   
       </div>
       <div class="col-lg-4">
@@ -62,7 +72,9 @@
           <h3 class="my-5">Previsualización de foto</h3>
           <img class="img-fluid" [src]="'http://localhost:3000/uploads/' + product?.photoUrl">
         }
+      
       </div>
     </div>
   </div>
+
   

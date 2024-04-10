@@ -3,15 +3,18 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Product } from '../interfaces/product.model';
+import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-product-form',
   standalone: true,
-  imports: [HttpClientModule, ReactiveFormsModule, RouterLink],
+  imports: [HttpClientModule, ReactiveFormsModule, RouterLink, NgbAlert],
   templateUrl: './product-form.component.html',
   styleUrl: './product-form.component.css'
 })
 export class ProductFormComponent implements OnInit {
+
+  showConfirmMessage = false;
 
   productForm = new FormGroup({
     id: new FormControl(),
