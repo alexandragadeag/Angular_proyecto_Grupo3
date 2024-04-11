@@ -32,11 +32,11 @@ export class ContractListComponent implements OnInit {
   }
 
   loadContracts() {
-    this.httpClient.get<Contract[]>('http://localhost:3000/contract')
+    this.httpClient.get<Contract[]>('http://localhost:3000/contract/')
       .subscribe(contractsFromBackend => this.contracts = contractsFromBackend);
   }
   delete(contract: Contract) {
-    this.httpClient.delete('http://localhost:3000/contract/' + contract.id)
+    this.httpClient.delete('http://localhost:3000/contract' + contract.id)
       .subscribe(response => {
         this.showDeletedMessage = true;
         this.loadContracts();
