@@ -15,6 +15,7 @@ import { HttpClient } from '@angular/common/http';
 export class AccountFormComponent implements OnInit{
 
   user: User | undefined;
+  showConfirmMessage = false;
 
   userForm = new FormGroup({
     phone: new FormControl(),

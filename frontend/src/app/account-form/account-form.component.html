@@ -3,7 +3,16 @@
       <div class="col-lg-8">
   
         <h1 class="my-5">Mi perfil</h1>
-  
+
+        @if (showConfirmMessage) {
+          <ngb-alert type="success" [dismissible]="false" class="text-center" style="min-height:100px">
+           Se ha completado el formulario correctamente.
+           <br>
+           Nos pondremos en contacto, lo antes posible.
+          </ngb-alert>
+          <button class="w-100 btn btn-purple btn-lg px-4" routerLink="/">Volver a página de inicio</button>
+
+        } @else {
         <form [formGroup]="userForm" (ngSubmit)="save()">
   
           <div class="form-floating mb-3">
@@ -21,7 +30,7 @@
           <button class="w-100 btn btn-purple btn-lg" type="submit">Guardar</button>
   
         </form>
-  
+      }
       </div>
       <div class="col-lg-4">
   
