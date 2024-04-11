@@ -15,6 +15,7 @@ import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 import { InvoiceDetailComponent } from './invoice-detail/invoice-detail.component';
 import { ContractFormComponent } from './contract-form/contract-form.component';
 import { roleAdminGuard } from './authentication/role.guard';
+import { AccountFormComponent } from './account-form/account-form.component';
 
 export const route: Routes = [
     { path: '', component: HomeComponent },
@@ -42,5 +43,9 @@ export const route: Routes = [
     { path: 'contracts/:id/update', component: ContractFormComponent,
     canActivate: [roleAdminGuard]
     },
+    {
+        path: 'account',
+        component: AccountFormComponent
+      }
     
 ];

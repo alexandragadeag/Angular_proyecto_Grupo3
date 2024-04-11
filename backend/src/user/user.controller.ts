@@ -33,8 +33,9 @@ export class UserController {
             id: 0,
             email: register.email,
             password: register.password,
-            phone: '',
-            role: Role.USER
+            phone: null,
+            role: Role.USER,
+            addressStreet: null
         };
         await this.userRepository.save(user);
     }
