@@ -32,7 +32,7 @@ export class ContractListComponent implements OnInit {
   }
 
   loadContracts() {
-    this.httpClient.get<Contract[]>('http://localhost:3000/contract/')
+    this.httpClient.get<Contract[]>('http://localhost:3000/contract')
       .subscribe(contractsFromBackend => this.contracts = contractsFromBackend);
   }
   delete(contract: Contract) {

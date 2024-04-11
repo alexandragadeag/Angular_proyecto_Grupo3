@@ -28,14 +28,27 @@ export class ContractController {
         });
     }
 
+     // http://localhost:3000/contract/filter-by-user/2
+     @Get('filter-by-user/:id')
+     findByUserId(@Param('id', ParseIntPipe) id: number){
+         return this.contractRepository.find({
+             where: {
+                 user: {
+                     id: id
+                 }
+             }
+         });
+     }
+
      // Este método es más seguro para obtener los contratos del usuario autenticado
      @UseGuards(AuthGuard('jwt'))
-     @Get('/contracts/filter-by-current-user')
+     @Get('filter-by-current-user')
      findByCurrentUserId(@Request() request) {
  
          if (request.user.role === Role.ADMIN) {
              return this.contractRepository.find();
          } else {
+            console.log(request.user.id);
              return this.contractRepository.find({
                  where: {
                      user: {
