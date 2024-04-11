@@ -1,20 +1,17 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Register } from '../interfaces/register.model';
-import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule, NgbAlert, RouterLink],
+  imports: [ReactiveFormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-
-  showConfirmMessage = false;
 
   registerForm = this.fb.group({
     //nickname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
@@ -25,10 +22,13 @@ export class RegisterComponent {
   },
   {validators: this.passwordConfirmValidator} // Validador personalizado para comprobar que las contraseñas son iguales
   );
+  error = '';
 
-  constructor(private fb: FormBuilder,
+  constructor(
+    private fb: FormBuilder,
     private httpClient: HttpClient,
-  private router: Router) {}
+    private router: Router
+  ) {}
 
     // Método personalizado para validar si la contraseña es igual a la confirmación de contraseña
   passwordConfirmValidator(control: AbstractControl){
@@ -51,11 +51,18 @@ export class RegisterComponent {
     };
 
     let url = 'http://localhost:3000/user/register';
-    this.httpClient.post<Register>(url, register)
-                    .subscribe(res => {
-                      console.log(res);
-                      this.router.navigate(['/login']);
-                    });
+    this.httpClient.post<Register>(url, register).subscribe({
+      next: data => {
+        this.router.navigate(['/login']);
+      },
+      error: error => {
+
+        if (error.status === 409) {
+          this.error = 'Datos ocupados, elige otros datos.';
+        }
+
+      }
+    });
 
 
   }

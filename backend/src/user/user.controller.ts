@@ -26,7 +26,7 @@ export class UserController {
         });
 
         if(exists)
-            throw new ConflictException("Email ocupado");
+            throw new ConflictException("Email ocupado");// 409
 
         // crear usuario en base de datos
         const user: User = {
