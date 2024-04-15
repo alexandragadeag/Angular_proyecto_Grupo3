@@ -7,7 +7,7 @@ import { AuthenticationService } from '../authentication/authentication.service'
 @Component({
   selector: 'app-invoice-list',
   standalone: true,
-  imports: [RouterLink, HttpClientModule],
+  imports: [RouterLink],
   templateUrl: './invoice-list.component.html',
   styleUrl: './invoice-list.component.css'
 })
