@@ -15,6 +15,8 @@
                 </div>
                 }
 
+                
+
             </div>
             <div class="col-4">
 
@@ -26,6 +28,7 @@
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
                         <div class="col d-flex align-items-start">
                             <div>
+                                <i class="bi bi-file-text"></i>
                                 <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Contrato</h3>
                                 <p>{{invoice.numberCode}}</p>
                             </div>
@@ -33,6 +36,7 @@
                         <div class="col d-flex align-items-start">
                          
                             <div>
+                                <i class="bi bi-lightbulb"></i>
                                 <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Kw</h3>
                                 <p>{{invoice.price}}</p>
                             </div>
@@ -42,6 +46,7 @@
                             <div class="col d-flex align-items-start">
                            
                                 <div>
+                                    <i class="bi bi-calendar-event"></i>
                                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Inicio </h3>
                                     <p>{{invoice.startDate | date:'dd/MM/yyyy'}}</p>
                                 </div>
@@ -49,6 +54,7 @@
                             <div class="col d-flex align-items-start">
                             
                                 <div>
+                                    <i class="bi bi-calendar-event"></i>
                                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Final</h3>
                                     <p>{{invoice.endDate | date:'dd/MM/yyyy'}}</p>
                                 </div>
@@ -57,6 +63,7 @@
                             <div class="col d-flex align-items-start">
                             
                                 <div>
+                                    <i class="bi bi-credit-card-2-back"></i>
                                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Total €</h3>
                                     <p>{{invoice.totalPrice}}</p>
                                 </div>
