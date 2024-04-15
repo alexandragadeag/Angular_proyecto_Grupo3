@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Budget } from '../interfaces/budget.model'
@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-budget',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule, NgbAlert, RouterLink],
+  imports: [ReactiveFormsModule, NgbAlert, RouterLink],
   templateUrl: './budget.component.html',
   styleUrl: './budget.component.css'
 })

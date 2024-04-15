@@ -17,3 +17,10 @@ Proyecto con Angular
     * Formulario
 
 * Página web responsive, se debe ver bien en ordenador principalmente y en móvil.
+
+* budget list  con botón crear contrato
+* Budget Controller que reciba la petición de crear contrato recibiendo el id del budget
+    * extraer el budget, extraer el usuario por email crear un contract
+
+* contract list con botón de crear factura
+ 

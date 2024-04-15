@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
@@ -8,7 +8,7 @@ import { Contract } from '../interfaces/contract.model';
 @Component({
   selector: 'app-contract-form',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './contract-form.component.html',
   styleUrl: './contract-form.component.css'
 })

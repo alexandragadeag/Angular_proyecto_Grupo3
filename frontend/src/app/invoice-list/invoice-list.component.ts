@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Invoice } from '../interfaces/invoice.model';
 import { RouterLink } from '@angular/router';
@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-invoice-list',
   standalone: true,
-  imports: [RouterLink, HttpClientModule],
+  imports: [RouterLink],
   templateUrl: './invoice-list.component.html',
   styleUrl: './invoice-list.component.css'
 })

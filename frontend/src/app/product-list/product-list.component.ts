@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { Product } from '../interfaces/product.model';
@@ -7,7 +7,7 @@ import { AuthenticationService } from '../authentication/authentication.service'
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [HttpClientModule, RouterLink],
+  imports: [RouterLink],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })

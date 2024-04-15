@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
@@ -8,7 +8,7 @@ import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-product-form',
   standalone: true,
-  imports: [HttpClientModule, ReactiveFormsModule, RouterLink, NgbAlert],
+  imports: [ ReactiveFormsModule, RouterLink, NgbAlert],
   templateUrl: './product-form.component.html',
   styleUrl: './product-form.component.css'
 })

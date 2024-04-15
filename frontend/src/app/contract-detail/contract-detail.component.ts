@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
@@ -9,7 +9,7 @@ import { AuthenticationService } from '../authentication/authentication.service'
 @Component({
   selector: 'app-contract-detail',
   standalone: true,
-  imports: [HttpClientModule, DatePipe, RouterLink, NgbAlert],
+  imports: [ DatePipe, RouterLink, NgbAlert],
   templateUrl: './contract-detail.component.html',
   styleUrl: './contract-detail.component.css'
 })
