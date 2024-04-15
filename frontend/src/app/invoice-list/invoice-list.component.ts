@@ -2,6 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Invoice } from '../interfaces/invoice.model';
 import { RouterLink } from '@angular/router';
+import { AuthenticationService } from '../authentication/authentication.service';
 
 @Component({
   selector: 'app-invoice-list',
@@ -14,9 +15,14 @@ export class InvoiceListComponent implements OnInit {
 
   invoices: Invoice[] = [];
   showDeletedMessage: boolean = false;
+  isAdmin = false;
 
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, 
+    private authService: AuthenticationService) {
+      this.authService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin);
+
+     }
 
   ngOnInit(): void {
     this.loadInvoices();
