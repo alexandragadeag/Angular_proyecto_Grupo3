@@ -9,6 +9,9 @@ import { DecodedToken } from './token.dto';
   providedIn: 'root'
 })
 export class AuthenticationService {
+  getIsLoggedIn() {
+    throw new Error('Method not implemented.');
+  }
 
   // Comprueba si un usuario ya está logueado, es decir, existe token
   // Notifica a quien se haya suscrito a este booleano de que ha ocurrido un login

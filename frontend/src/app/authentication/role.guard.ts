@@ -17,3 +17,16 @@ export const roleAdminGuard: CanActivateFn = (route, state) => {
   }
 
 };
+
+export const roleLoggedGuard: CanActivateFn = (route, state) => {
+  const authService = inject(AuthenticationService);
+  const router = inject(Router);
+
+  if (authService.getIsAdmin()){
+    return true;
+  } else {
+    return router.navigate(['/login']); // si no es admin entonces redirige a login
+  }
+
+};
+

@@ -14,7 +14,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 import { InvoiceDetailComponent } from './invoice-detail/invoice-detail.component';
 import { ContractFormComponent } from './contract-form/contract-form.component';
-import { roleAdminGuard } from './authentication/role.guard';
+import { roleAdminGuard, roleLoggedGuard } from './authentication/role.guard';
 import { AccountFormComponent } from './account-form/account-form.component';
 
 export const route: Routes = [
@@ -29,6 +29,7 @@ export const route: Routes = [
     { path: 'contracts', component: ContractListComponent},
     { path: 'products', component: ProductListComponent,
       //canActivate: [isLoggedInGuard]
+      canActivate: [roleLoggedGuard]
     },
     { path: 'products/create', component: ProductFormComponent,
     canActivate: [roleAdminGuard]
