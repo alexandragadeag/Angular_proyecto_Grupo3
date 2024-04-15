@@ -22,8 +22,8 @@
               <td>{{invoice.id}}</td>
               <td>{{invoice.numberCode}}</td>
               <td>{{invoice.price}}</td>
-              <td>{{invoice.emitDate}}</td>
-              <td>{{invoice.endDate}}</td>
+              <td>{{invoice.emitDate | date:'dd/MM/yyyy'}}</td>
+              <td>{{invoice.endDate | date:'dd/MM/yyyy'}}</td>
               <td>{{invoice.totalPrice}}</td>
                 
               <td>
@@ -42,9 +42,12 @@
                 <button class="btn btn-info me-2 btn-sm" [routerLink]="['/invoices', invoice.id, 'detail']">
                   Ver 
                 </button>
-                <button class="btn btn-danger me-2 btn-sm" (click)="delete(invoice)">
-                  Desactivar
-                </button>
+                @if (isAdmin) {
+                  <button class="btn btn-danger me-2 btn-sm" (click)="delete(invoice)">
+                    Desactivar
+                  </button>
+                }
+                
               </td>
              
 
