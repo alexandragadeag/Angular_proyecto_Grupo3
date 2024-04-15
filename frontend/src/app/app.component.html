@@ -47,6 +47,9 @@
 					    @if (isLoggedIn) {
 						<a ngbDropdownItem routerLink="/contracts" (click)="$event.preventDefault()">Contratos</a>
 					}
+					@if (isLoggedIn) {
+						<a ngbDropdownItem routerLink="/invoices" (click)="$event.preventDefault()">Facturas</a>
+					}
 					    @if (isLoggedIn) {
 					    <a ngbDropdownItem routerLink="/" (click)="$event.preventDefault()">Usuarios</a>
 					}	
