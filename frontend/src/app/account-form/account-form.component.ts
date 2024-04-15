@@ -40,6 +40,7 @@ export class AccountFormComponent implements OnInit{
     this.httpClient.put('http://localhost:3000/user', this.user).subscribe(data => {
       // mostrar mensaje de OK
       // navegar a home
+      this.showConfirmMessage = true;
     });
 
   }
