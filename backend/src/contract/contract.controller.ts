@@ -16,7 +16,7 @@ export class ContractController {
         return this.contractRepository.find(); // Equivalente al SELECT * FROM
     }
 
-    @Get(':id') // :id es una variable, parámetro en la url
+    @Get('filter-by-id/:id') // :id es una variable, parámetro en la url
     findById( @Param('id', ParseIntPipe) id: number ) {
         return this.contractRepository.findOne({
             // relations: {

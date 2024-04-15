@@ -34,7 +34,7 @@ export class ContractDetailComponent implements OnInit {
     ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
     let id = params['id'];
-    this.http.get<Contract>('http://localhost:3000/contract/' + id)
+    this.http.get<Contract>('http://localhost:3000/contract/filter-by-id/' + id)
     .subscribe(contract => this.contract = contract);
     });
     }

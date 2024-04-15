@@ -27,7 +27,9 @@ export const route: Routes = [
     { path: 'donation',component: DonationComponent},
     { path: 'contracts/detail/:id', component: ContractDetailComponent},
     { path: 'contracts', component: ContractListComponent},
-    { path: 'products', component: ProductListComponent},
+    { path: 'products', component: ProductListComponent,
+      //canActivate: [isLoggedInGuard]
+    },
     { path: 'products/create', component: ProductFormComponent,
     canActivate: [roleAdminGuard]
     },
