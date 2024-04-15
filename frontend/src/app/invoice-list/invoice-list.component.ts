@@ -3,11 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { Invoice } from '../interfaces/invoice.model';
 import { RouterLink } from '@angular/router';
 import { AuthenticationService } from '../authentication/authentication.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-invoice-list',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, DatePipe],
   templateUrl: './invoice-list.component.html',
   styleUrl: './invoice-list.component.css'
 })

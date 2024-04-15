@@ -37,34 +37,33 @@
                                 <p>{{invoice.price}}</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
                
 
                             <div class="col d-flex align-items-start">
                            
                                 <div>
                                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Inicio </h3>
-                                    <p>{{invoice.startDate}}</p>
+                                    <p>{{invoice.startDate | date:'dd/MM/yyyy'}}</p>
                                 </div>
                             </div>
                             <div class="col d-flex align-items-start">
                             
                                 <div>
                                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Final</h3>
-                                    <p>{{invoice.endDate}}</p>
+                                    <p>{{invoice.endDate | date:'dd/MM/yyyy'}}</p>
                                 </div>
                             </div>
 
                             <div class="col d-flex align-items-start">
                             
                                 <div>
-                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Total</h3>
+                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Total €</h3>
                                     <p>{{invoice.totalPrice}}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+               
                 }
             </div>
         </div>

@@ -2,10 +2,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Invoice } from '../interfaces/invoice.model';
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-invoice-detail',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, DatePipe],
   templateUrl: './invoice-detail.component.html',
   styleUrl: './invoice-detail.component.css'
 })
