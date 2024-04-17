@@ -1,1 +1,68 @@
-<p>budget-list works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+  
+        <h1 class="mt-5">Listado de presupuesto</h1>
+  
+
+        @if (showDeletedMessage) {
+          <ngb-alert type="success" (closed)="closeMessage()">Presupuesto desactivado correctamente.</ngb-alert>
+        }
+        
+        @if (isAdmin) {
+        <button class="btn btn-purple"
+        routerLink="/contracts/create">Crear contrato</button>
+      }
+        <table class="table table-striped mt-5">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Emeil</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            @for (budget of budget; track budget.id) {
+            <tr>
+              <td>{{budget.id}}</td>
+              <td>{{budget.name}}</td>
+              <td>{{budget.surname}}</td>
+              <td>{{budget.email}}</td>
+             
+              <td>
+                @if (budget) {
+                  <span class="badge text-bg-success">Sí</span>
+                } @else {
+                  <span class="badge text-bg-danger">No</span>
+                }
+              </td>
+
+              <td>
+
+
+                <button class="btn btn-info me-2 btn-sm" [routerLink]="['/budgets', 'detail', budget.id]">
+                  Ver 
+                </button>
+                @if (isAdmin) {
+                <button class="btn btn-purple me-2 btn-sm" [routerLink]="['/budgets', budget.id, 'update']">
+                  Editar
+                </button>
+              }
+
+              @if (isAdmin) {
+                <button class="btn btn-danger me-2 btn-sm" (click)="delete(budget)">
+                  Desactivar
+                </button>
+              }
+
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+

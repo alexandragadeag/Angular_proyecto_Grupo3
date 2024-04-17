@@ -17,6 +17,7 @@ import { ContractFormComponent } from './contract-form/contract-form.component';
 import { roleAdminGuard, roleLoggedGuard } from './authentication/role.guard';
 import { AccountFormComponent } from './account-form/account-form.component';
 import { ContactComponent } from './contact/contact.component';
+import { BudgetListComponent } from './budget-list/budget-list.component';
 
 export const route: Routes = [
     { path: '', component: HomeComponent },
@@ -52,6 +53,7 @@ export const route: Routes = [
     {
         path: 'account',
         component: AccountFormComponent
-      }
+      },
+      { path: 'budgets', component: BudgetListComponent},
     
 ];
