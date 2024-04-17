@@ -78,7 +78,7 @@ export class ContractController {
             });
 
             if(!exists) {
-                throw new NotFoundException('Book not found');
+                throw new NotFoundException('Contract not found');
             }
 
             return this.contractRepository.save(contract);
