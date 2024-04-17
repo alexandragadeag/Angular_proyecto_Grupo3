@@ -96,6 +96,7 @@ export class ProductFormComponent implements OnInit {
           this.photoFile = undefined;
           this.photoPreview = undefined;
           this.product = product;
+          this.showConfirmMessage = true;
         });
 
     } else {
@@ -104,8 +105,10 @@ export class ProductFormComponent implements OnInit {
           this.photoFile = undefined;
           this.photoPreview = undefined;
           this.product = product;
+          this.showConfirmMessage = true;
         });
     }
   }
+  
 
 }

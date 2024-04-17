@@ -10,11 +10,11 @@
 
       @if (showConfirmMessage) {
         <ngb-alert type="success" [dismissible]="false" class="text-center" style="min-height:100px">
-         Se ha completado el formulario correctamente.
+         Se ha realizado el producto correctamenta.
          <br>
-         Nos pondremos en contacto, lo antes posible.
+         ¡Gracias!
         </ngb-alert>
-        <button class="w-100 btn btn-purple btn-lg px-4" routerLink="/products">Volver a planes</button>
+        <button class="w-100 btn btn-purple btn-lg px-4" routerLink="/products">Volver a productos</button>
         
       } @else {
         <form [formGroup]="productForm" (submit)="save()">
