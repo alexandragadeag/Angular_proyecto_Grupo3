@@ -14,10 +14,11 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 import { InvoiceDetailComponent } from './invoice-detail/invoice-detail.component';
 import { ContractFormComponent } from './contract-form/contract-form.component';
-import { roleAdminGuard, roleLoggedGuard } from './authentication/role.guard';
+import { roleAdminGuard,} from './authentication/role.guard';
 import { AccountFormComponent } from './account-form/account-form.component';
 import { ContactComponent } from './contact/contact.component';
 import { BudgetListComponent } from './budget-list/budget-list.component';
+import { userLoggedInGuard } from './authentication/user-logged-in.guard';
 
 export const route: Routes = [
     { path: '', component: HomeComponent },
@@ -33,7 +34,7 @@ export const route: Routes = [
     { path: 'products', component: ProductListComponent,
     
       //canActivate: [isLoggedInGuard]
-      canActivate: [roleLoggedGuard]
+      canActivate: [userLoggedInGuard]
     },
     { path: 'products/create', component: ProductFormComponent,
     canActivate: [roleAdminGuard]
