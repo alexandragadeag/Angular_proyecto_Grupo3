@@ -19,6 +19,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { JwtValidator } from './user/jwt.validator';
+import { Contact } from './contact/contact.model';
+import { ContactController } from './contact/contact.controller';
 
 @Module({
   imports: [
@@ -46,14 +48,14 @@ import { JwtValidator } from './user/jwt.validator';
       username: 'root',
       password: 'admin1234',
       database: 'nest_helio', // crear esta base de datos en MySQL primero
-      entities: [User, Budget, Contract, Invoice, Product],
+      entities: [User, Budget, Contract, Invoice, Product, Contact],
       synchronize: true, // generar tablas en base de datos
       logging: true
     }),
-    TypeOrmModule.forFeature([User, Budget, Contract, Invoice, Product]) // Esto permite acceder a Repository
+    TypeOrmModule.forFeature([User, Budget, Contract, Invoice, Product, Contact]) // Esto permite acceder a Repository
     
   ],
-  controllers: [AppController, UserController, BudgetController, ContractController, InvoiceController, ProductController],
+  controllers: [AppController, UserController, BudgetController, ContractController, InvoiceController, ProductController, ContactController],
   // Clase personalizada para validar y verificar token JWT
   providers: [AppService, JwtValidator],
 })
