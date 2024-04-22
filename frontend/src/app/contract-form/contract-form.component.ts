@@ -39,7 +39,7 @@ export class ContractFormComponent implements OnInit{
 
     this.activatedRoute.params.subscribe(params => {
       let id =params['id'];
-      this.httpClient.get<Contract>(`http://localhost:3000/contract/${id}`).subscribe(contract => {
+      this.httpClient.get<Contract>(`http://localhost:3000/contract/filter-by-id/${id}`).subscribe(contract => {
       
          this.isUpdate = true;
   
