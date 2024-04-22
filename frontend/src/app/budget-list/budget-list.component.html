@@ -49,6 +49,9 @@
                 <button class="btn btn-purple me-2 btn-sm" [routerLink]="['/budgets', budget.id, 'update']">
                   Editar
                 </button>
+                <button class="btn btn-purple me-2 btn-sm" [routerLink]="['/contracts', budget.id, 'create']">
+                  Crear contrato
+                </button>
               }
 
               @if (isAdmin) {

@@ -1,7 +1,9 @@
-import { Body, Controller, Get, Param, ParseIntPipe, Post} from '@nestjs/common';
+import { Body, Request, Controller, Get, Param, ParseIntPipe, Post, UseGuards, UnauthorizedException} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Budget } from './budget.model';
 import { Repository } from 'typeorm';
+import { AuthGuard } from '@nestjs/passport';
+import { Role } from 'src/user/role.enums';
 
 
 
@@ -40,6 +42,19 @@ export class BudgetController {
                 id: id
             }
         });
+    }
+
+    @UseGuards(AuthGuard('jwt'))
+    @Get('filter-by-current-user')
+    findByCurrentUserId(@Request() request) {
+
+        if (request.user.role === Role.ADMIN) {
+            return this.budgetRepository.find();
+        } else {
+           console.log(request.user.id);
+            throw new UnauthorizedException();
+        }
+
     }
 
      

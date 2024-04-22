@@ -56,5 +56,8 @@ export const route: Routes = [
         component: AccountFormComponent
       },
       { path: 'budgets', component: BudgetListComponent},
+      { path: 'contracts/:budgetId/create', component: ContractFormComponent,
+    canActivate: [roleAdminGuard]
+    }
     
 ];

@@ -4,11 +4,13 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Role } from 'src/user/role.enums';
 import { AuthGuard } from '@nestjs/passport';
+import { User } from 'src/user/user.model';
 
 @Controller('contract')
 export class ContractController {
     constructor(
-        @InjectRepository(Contract) private contractRepository: Repository<Contract>
+        @InjectRepository(Contract) private contractRepository: Repository<Contract>,
+        @InjectRepository(User) private userRepository: Repository<User>
     ) { }
 
     @Get()
@@ -61,7 +63,19 @@ export class ContractController {
      }   
 
     @Post()
-    create(@Body() contract: Contract) {
+    @UseGuards(AuthGuard('jwt'))
+    async create(@Body() contract: Contract) {
+        
+
+        const user = await this.userRepository.findOne({
+            where: {
+                email: contract.budget.email
+            }
+        });
+        if (user) {
+            contract.user = user;
+        }
+
         return this.contractRepository.save(contract);
     }
 

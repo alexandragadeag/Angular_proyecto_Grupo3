@@ -1,3 +1,6 @@
+import { Budget } from "./budget.model";
+import { User } from "./user.model";
+
 export interface Contract {
     id: number;
 
@@ -10,6 +13,8 @@ export interface Contract {
     active: boolean;
     
     // asociaciones
+    user?: User;
+    budget?: Budget;
 
-    //budget: Budget;// Many To One
+
 }
