@@ -9,13 +9,16 @@
           <ngb-alert type="success" (closed)="closeMessage()">Presupuesto desactivado correctamente.</ngb-alert>
         }
         
+       
         <table class="table table-striped mt-5">
           <thead>
             <tr>
               <th scope="col">Id</th>
               <th scope="col">Nombre</th>
               <th scope="col">Apellido</th>
-              <th scope="col">Emeil</th>
+              <th scope="col">Email</th>
+              <th scope="col">Activo</th>
+              <th scope="col">Acciones</th>
              
             </tr>
           </thead>
@@ -36,25 +39,10 @@
               </td>
 
               <td>
-
-
-                <button class="btn btn-info me-2 btn-sm" [routerLink]="['/budgets', 'detail', budget.id]">
-                  Ver 
-                </button>
-                @if (isAdmin) {
-                <button class="btn btn-purple me-2 btn-sm" [routerLink]="['/budgets', budget.id, 'update']">
-                  Editar
-                </button>
-                <button class="btn btn-purple me-2 btn-sm" [routerLink]="['/contracts', budget.id, 'create']">
+             
+                <button class="btn btn-purple me-2 btn-sm" [routerLink]="['/contracts', budget.id, 'update']">
                   Crear contrato
-                </button>
-              }
-
-              @if (isAdmin) {
-                <button class="btn btn-danger me-2 btn-sm" (click)="delete(budget)">
-                  Desactivar
-                </button>
-              }
+                </button>    
 
               </td>
             </tr>
