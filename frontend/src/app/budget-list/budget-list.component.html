@@ -9,10 +9,6 @@
           <ngb-alert type="success" (closed)="closeMessage()">Presupuesto desactivado correctamente.</ngb-alert>
         }
         
-        @if (isAdmin) {
-        <button class="btn btn-purple"
-        routerLink="/contracts/create">Crear contrato</button>
-      }
         <table class="table table-striped mt-5">
           <thead>
             <tr>

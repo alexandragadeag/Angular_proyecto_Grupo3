@@ -53,6 +53,9 @@
 					    @if (isAdmin) {
 					    <a ngbDropdownItem routerLink="/" (click)="$event.preventDefault()">Usuarios</a>
 					}	
+					@if (isAdmin) {
+					    <a ngbDropdownItem routerLink="/budgets" (click)="$event.preventDefault()">Presupuestos</a>
+					}	
 					</div>
 				</li>
 
