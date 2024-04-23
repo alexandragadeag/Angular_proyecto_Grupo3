@@ -35,6 +35,7 @@ export class ContractFormComponent implements OnInit{
   contract: Contract | undefined;
   budget: Budget | undefined;
   
+  
   constructor(private httpClient: HttpClient,
   private activatedRoute: ActivatedRoute, 
   private router: Router
@@ -95,14 +96,14 @@ save(): void {
   if(this.isUpdate){
     // ACTUALIZAR UN CONTRATO EXISTENTE
     const urlForUpdate = 'http://localhost:3000/contract/' + contract.id;
-    this.httpClient.put<Contract>(urlForUpdate, contract).subscribe(data => this.router.navigate(['/']));
+    this.httpClient.put<Contract>(urlForUpdate, contract).subscribe(data => this.showConfirmMessage = true);
   } else {
     // CREAR UN NUEVO CONTRATO 
     const url = 'http://localhost:3000/contract';
-    this.httpClient.post<Contract>(url, contract).subscribe(data => this.router.navigate(['/']));
+    this.httpClient.post<Contract>(url, contract).subscribe(data => this.showConfirmMessage = true);
   }
 
-  this.showConfirmMessage = true;
+  
 
 }
 
