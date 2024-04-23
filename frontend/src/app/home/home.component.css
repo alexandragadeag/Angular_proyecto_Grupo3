@@ -12,4 +12,9 @@
     max-height: 80vh; /* ajustar este valor según nuestras necesidades */
 }
 
+    .accordion-container {
+        margin: 20px; /* Ajusta este valor según el espacio que desees */
+    }
+
+
 
