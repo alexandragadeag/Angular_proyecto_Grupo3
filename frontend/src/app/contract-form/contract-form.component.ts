@@ -4,16 +4,20 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Contract } from '../interfaces/contract.model';
 import { Budget } from '../interfaces/budget.model';
+import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
   selector: 'app-contract-form',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, NgbAlert],
   templateUrl: './contract-form.component.html',
   styleUrl: './contract-form.component.css'
 })
 export class ContractFormComponent implements OnInit{
+
+  showConfirmMessage = false;
+
 
   contractForm = new FormGroup({
     id: new FormControl(),
@@ -29,7 +33,6 @@ export class ContractFormComponent implements OnInit{
 
   isUpdate: boolean = false;
   contract: Contract | undefined;
-  showConfirmMessage: boolean | undefined;
   budget: Budget | undefined;
   
   constructor(private httpClient: HttpClient,
@@ -98,6 +101,8 @@ save(): void {
     const url = 'http://localhost:3000/contract';
     this.httpClient.post<Contract>(url, contract).subscribe(data => this.router.navigate(['/']));
   }
+
+  this.showConfirmMessage = true;
 
 }
 

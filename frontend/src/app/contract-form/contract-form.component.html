@@ -9,8 +9,16 @@
         } @else {
             <h1 class="mt-5">Crear nuevo contrato</h1>
         }
+
+        @if (showConfirmMessage) {
+          <ngb-alert type="success" [dismissible]="false" class="text-center" style="min-height:100px">
+           Se ha completado el contrato correctamente.
+           <br>
+           ¡Gracias!
+          </ngb-alert>
+          <button class="w-100 btn btn-purple btn-lg px-4" routerLink="/contracts">Volver a contratos</button>
   
-  
+        } @else {
         <form [formGroup]="contractForm" (submit)="save()">
   
           <div class="form-floating mb-3">
@@ -68,6 +76,7 @@
   
   
         </form>
+      }
 
   </div>
   
