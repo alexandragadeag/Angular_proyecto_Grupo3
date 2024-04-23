@@ -8,11 +8,11 @@
           <thead>
             <tr>
               <th scope="col">Id</th>
-              <th scope="col">Número de contrato</th>
+              <th scope="col">Contrato</th>
               <th scope="col">Precio kw</th>
-              <th scope="col">Fecha de inicio periodo facturado</th>
-              <th scope="col">Fecha de finalización periodo facturado</th>
-              <th scope="col">Precio total</th>
+              <th scope="col">Inicio periodo facturado</th>
+              <th scope="col">Finalización periodo</th>
+              <th scope="col">Total</th>
               <th scope="col">Activado</th>
             </tr>
           </thead>
@@ -22,7 +22,7 @@
               <td>{{invoice.id}}</td>
               <td>{{invoice.numberCode}}</td>
               <td>{{invoice.price}}</td>
-              <td>{{invoice.emitDate | date:'dd/MM/yyyy'}}</td>
+              <td>{{invoice.startDate | date:'dd/MM/yyyy'}}</td>
               <td>{{invoice.endDate | date:'dd/MM/yyyy'}}</td>
               <td>{{invoice.totalPrice}}</td>
                 

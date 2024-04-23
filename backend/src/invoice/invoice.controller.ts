@@ -1,8 +1,10 @@
-import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
+import { Controller, Request, Get, Param, ParseIntPipe, UseGuards } from '@nestjs/common';
 import { Invoice } from './invoice.model';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Post, Body } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
+import { Role } from 'src/user/role.enums';
 
 @Controller('invoice')
 export class InvoiceController {
@@ -16,9 +18,23 @@ export class InvoiceController {
     ) { }
 
 
+    @UseGuards(AuthGuard('jwt'))
     @Get()
-    findAll() {
-        return this.invoiceRepository.find();
+    findAll(@Request() request) {
+
+        if (request.user.role === Role.ADMIN) {
+            return this.invoiceRepository.find();
+        } else {
+           console.log(request.user.id);
+            return this.invoiceRepository.find({
+                where: {
+                    user: {
+                        id: request.user.id
+                    }
+                }
+            });
+        }
+
     }
 
     @Get(':id')
