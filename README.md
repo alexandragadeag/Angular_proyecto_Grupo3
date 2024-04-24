@@ -3,7 +3,8 @@ Helio Energy
 
 Una plataforma integral de energía solar desarrollada con Angular, que combina eficiencia energética con una interfaz intuitiva, ofreciendo información en tiempo real y herramientas de gestión para empoderar a los usuarios en su transición hacia una energía más sostenible.
 
-![Captura de Pantalla 2024-04-24 a las 12 06 34](https://github.com/alexandragadeag/Angular_proyecto_Grupo3/assets/149069703/5dbb145c-21ab-4074-9ba9-952e3c7cad88)
+![Captura de Pantalla 2024-04-24 a las 12 31 35](https://github.com/alexandragadeag/Angular_proyecto_Grupo3/assets/149069703/45282aec-13de-4a60-b06c-8f8b339502c0)
+
 
 
 ## REQUISITOS MÍNIMOS:
