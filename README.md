@@ -1,5 +1,11 @@
 # Angular_proyecto_Grupo3
-Proyecto con Angular
+Helio Energy
+
+Una plataforma integral de energía solar desarrollada con Angular, que combina eficiencia energética con una interfaz intuitiva, ofreciendo información en tiempo real y herramientas de gestión para empoderar a los usuarios en su transición hacia una energía más sostenible.
+
+![Captura de Pantalla 2024-04-24 a las 12 06 34](https://github.com/alexandragadeag/Angular_proyecto_Grupo3/assets/149069703/5dbb145c-21ab-4074-9ba9-952e3c7cad88)
+
+
 ## REQUISITOS MÍNIMOS:
 
 * 4-5 tablas: usuario, proyecto, tarea, categoría, etiqueta, comentario/valoracion/opinion
