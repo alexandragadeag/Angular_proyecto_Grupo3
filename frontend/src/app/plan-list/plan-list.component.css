@@ -1,5 +1,5 @@
 .card-with-background-1 {
-    background-image: url('/assets/img/solar_4-min.png'); /* Reemplaza 'ruta/a/imagen-1.jpg' con la ruta de tu primera imagen */
+    background-image: url('/assets/img/foto.png'); /* Reemplaza 'ruta/a/imagen-1.jpg' con la ruta de tu primera imagen */
     background-size: cover;
     background-position: center;
     color: white; /* Cambia el color del texto si es necesario para que se vea bien sobre la imagen */
