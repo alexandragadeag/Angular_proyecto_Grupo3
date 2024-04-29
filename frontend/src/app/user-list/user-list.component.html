@@ -1,1 +1,52 @@
-<p>user-list works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+  
+        <h1 class="mt-5">Listado de usuarios</h1>
+  
+
+       
+        
+        <table class="table table-striped mt-5">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Email</th>
+              <th scope="col">Teléfono</th>
+              <th scope="col">Dirección</th>
+            
+            </tr>
+          </thead>
+          <tbody>
+            @for(user of users; track user.id) {
+            <tr>
+              <td>{{user.id}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.phone}}</td>
+              <td>{{user.addressStreet}}</td>
+            
+
+             
+
+              <td>
+
+                @if (isAdmin) {
+                <button class="btn btn-info me-2 btn-sm" [routerLink]="['/users', 'detail', user.id]">
+                  Ver
+                </button>
+            }
+                @if (isAdmin) {
+                <button class="btn btn-purple me-2 btn-sm" [routerLink]="['/users', user.id, 'update']">
+                  Editar
+                </button>
+              }
+
+
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
