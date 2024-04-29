@@ -1,10 +1,9 @@
 @if(product) {
     <div class="mt-5 text-center">
       <!-- Recomendable imágenes cuadradas por ejemplo 500x500 -->
-      <img
-      class="d-block mx-auto mb-4 rounded-circle"
+      <img src="ruta_de_la_imagen.jpg" class="d-block mx-auto mb-4 rounded" 
       [src]="'http://localhost:3000/uploads/' + product.photoUrl" alt="product"
-      style="max-width:150px;">
+      style="width: 200px; height: 200px;">
   
       <h1 class="display-5 fw-bold text-body-emphasis">{{product.title}} 
           <i class="bi bi-sunrise ms-2"></i>  
