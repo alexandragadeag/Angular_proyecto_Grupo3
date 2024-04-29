@@ -84,6 +84,15 @@ export class UserController {
         return request.user;
     }
 
+    @Get()
+    @UseGuards(AuthGuard('jwt'))
+    public findAll(@Request() request) {
+        if (request.user.role === Role.ADMIN) {
+            return this.userRepository.find();
+        } else {
+            throw new UnauthorizedException('No tiene permisos');
+        } 
+    }
 
 
     // update user: Actualiza el usuario se utiliza desde la pantalla Mi Perfil de frontend para enviar usuario

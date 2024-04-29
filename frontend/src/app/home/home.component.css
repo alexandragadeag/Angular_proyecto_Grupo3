@@ -13,7 +13,8 @@
 }
 
     .accordion-container {
-        margin: 30px; /* Ajusta este valor según el espacio que desees */
+        margin: 100px; /* Ajusta este valor según el espacio que desees */
+        margin-top: 50px;
     }
 
 
