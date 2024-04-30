@@ -20,6 +20,7 @@ import { ContactComponent } from './contact/contact.component';
 import { BudgetListComponent } from './budget-list/budget-list.component';
 import { userLoggedInGuard } from './authentication/user-logged-in.guard';
 import { UserListComponent } from './user-list/user-list.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 export const route: Routes = [
     { path: '', component: HomeComponent },
@@ -60,6 +61,7 @@ export const route: Routes = [
       { path: 'contracts/:budgetId/create', component: ContractFormComponent,
     canActivate: [roleAdminGuard]
     },
-    { path: 'user', component: UserListComponent},
+    { path: 'users', component: UserListComponent},
+    { path: 'users/:id/detail', component: UserDetailComponent},
     
 ];

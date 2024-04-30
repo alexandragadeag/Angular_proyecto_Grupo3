@@ -31,15 +31,15 @@
               <td>
 
                 @if (isAdmin) {
-                <button class="btn btn-info me-2 btn-sm" [routerLink]="['/users', 'detail', user.id]">
+                <button class="btn btn-info me-2 btn-sm" [routerLink]="['/users', user.id, 'detail']">
                   Ver
                 </button>
             }
-                @if (isAdmin) {
+                <!-- @if (isAdmin) {
                 <button class="btn btn-purple me-2 btn-sm" [routerLink]="['/users', user.id, 'update']">
                   Editar
                 </button>
-              }
+              } -->
 
 
               </td>
