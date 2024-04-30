@@ -21,7 +21,13 @@
           @for (invoice of invoices; track invoice.id) {
             <tr>
               <td>{{invoice.id}}</td>
-              <td>{{invoice.numberCode}}</td>
+              <td>
+                @if(invoice.contract){
+                  {{invoice.contract.id}}
+                } @else {
+                  no hay contrato
+                }
+              </td>
               <td>{{invoice.price}}</td>
               <td>{{invoice.startDate | date:'dd/MM/yyyy'}}</td>
               <td>{{invoice.endDate | date:'dd/MM/yyyy'}}</td>

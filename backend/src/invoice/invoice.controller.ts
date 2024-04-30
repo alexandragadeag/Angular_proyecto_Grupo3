@@ -23,13 +23,15 @@ export class InvoiceController {
     findAll(@Request() request) {
 
         if (request.user.role === Role.ADMIN) {
-            return this.invoiceRepository.find();
+            
         } else {
            console.log(request.user.id);
             return this.invoiceRepository.find({
                 where: {
-                    user: {
-                        id: request.user.id
+                    contract: {
+                        user: {
+                            id: request.user.id
+                        }
                     }
                 }
             });

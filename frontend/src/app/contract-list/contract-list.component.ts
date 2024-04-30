@@ -13,6 +13,10 @@ import { AuthenticationService } from '../authentication/authentication.service'
   styleUrl: './contract-list.component.css'
 })
 export class ContractListComponent implements OnInit {
+invoice: any;
+create(arg0: any) {
+throw new Error('Method not implemented.');
+}
 
   contracts: Contract[] = [];
   showDeletedMessage: boolean = false;
