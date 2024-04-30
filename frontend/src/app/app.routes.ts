@@ -20,7 +20,12 @@ import { ContactComponent } from './contact/contact.component';
 import { BudgetListComponent } from './budget-list/budget-list.component';
 import { userLoggedInGuard } from './authentication/user-logged-in.guard';
 import { UserListComponent } from './user-list/user-list.component';
+<<<<<<< HEAD
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { InvoiceFormComponent } from './invoice-form/invoice-form.component';
+=======
+import { InvoiceFormComponent } from './invoice-form/invoice-form.component';
+>>>>>>> 007dd08 (create invoice desde contract list ok)
 
 export const route: Routes = [
     { path: '', component: HomeComponent },
@@ -63,5 +68,8 @@ export const route: Routes = [
     },
     { path: 'users', component: UserListComponent},
     { path: 'users/:id/detail', component: UserDetailComponent},
+    { path: 'contracts/:id/create-invoice', component: InvoiceFormComponent},
+
+    
     
 ];

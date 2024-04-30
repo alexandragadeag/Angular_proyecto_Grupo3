@@ -7,7 +7,7 @@ import { DatePipe } from '@angular/common';
   selector: 'app-invoice-detail',
   standalone: true,
   imports: [RouterLink, DatePipe],
-  templateUrl: './invoice-detail.component.html',
+  templateUrl:  './invoice-detail.component.html',
   styleUrl: './invoice-detail.component.css'
 })
 export class InvoiceDetailComponent implements OnInit {

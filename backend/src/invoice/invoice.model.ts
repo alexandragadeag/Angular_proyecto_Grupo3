@@ -1,6 +1,6 @@
 import { Contract } from "src/contract/contract.model";
 import { User } from "src/user/user.model";
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Invoice {
@@ -8,30 +8,30 @@ export class Invoice {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
-    numberCode: string;
-
-    @Column()
+    @Column({nullable: true})
     price: number;
 
-    @Column()
+    @CreateDateColumn()
+    emitDate: Date;
+
+    @Column({nullable: true})
     startDate: Date;
 
-    @Column()
+    @Column({nullable: true})
     endDate: Date;
 
-    @Column()
+    @Column({nullable: true})
     totalPrice: number;
 
-    @Column()
+    @Column({nullable: true})
     active: boolean;
 
 
     @ManyToOne(() => Contract, {eager:true})
     contract: Contract;
 
-    @ManyToOne(() => User, {eager: true})
-user: User;
+//     @ManyToOne(() => User, {eager: true})
+// user: User;
 
  
 
