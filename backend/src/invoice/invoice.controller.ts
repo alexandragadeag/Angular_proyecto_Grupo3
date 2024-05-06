@@ -62,9 +62,12 @@ export class InvoiceController {
 
         return this.invoiceRepository.find({
             where: {
-                user: {
-                    id: request.user.id
+                contract: {
+                    user: {
+                        id: request.user.id
+                    }
                 }
+                
             }
         });
     }
