@@ -58,6 +58,9 @@
               }
 
               @if (isAdmin) {
+                <button class="btn btn-danger me-2 btn-sm" (click)="delete(contract)">
+                  Desactivar
+                </button>
                 <button class="btn btn-danger me-2 btn-sm" [routerLink]="['/contracts', contract.id, 'create-invoice']">
                   Crear factura
                 </button>
