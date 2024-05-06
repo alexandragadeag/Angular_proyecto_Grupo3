@@ -56,15 +56,15 @@ export class InvoiceController {
         });
     }
 
-    @Get('filter-by-user/current')
+    @Get('filter-by-user-id/:id')
     @UseGuards(AuthGuard('jwt'))
-    findByUser(@Request() request) {
+    findByUser(@Request() request, @Param('id', ParseIntPipe) id: number) {
 
         return this.invoiceRepository.find({
             where: {
                 contract: {
                     user: {
-                        id: request.user.id
+                        id: id
                     }
                 }
                 

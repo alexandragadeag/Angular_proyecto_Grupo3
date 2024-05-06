@@ -1,4 +1,4 @@
-import { Body, ConflictException, Controller, Get, NotFoundException, Post, Put, Request, UnauthorizedException, UseGuards } from '@nestjs/common';
+import { Body, ConflictException, Controller, Get, NotFoundException, Param, ParseIntPipe, Post, Put, Request, UnauthorizedException, UseGuards } from '@nestjs/common';
 import { Register } from './register.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './user.model';
@@ -93,6 +93,17 @@ export class UserController {
             throw new UnauthorizedException('No tiene permisos');
         } 
     }
+
+    @Get('filter-by-id/:id')
+    @UseGuards(AuthGuard('jwt'))
+    public findById(@Param('id', ParseIntPipe) id: number) {
+        return this.userRepository.findOne({
+            where: {
+                id: id
+            }
+        });
+    }
+
 
 
     // update user: Actualiza el usuario se utiliza desde la pantalla Mi Perfil de frontend para enviar usuario

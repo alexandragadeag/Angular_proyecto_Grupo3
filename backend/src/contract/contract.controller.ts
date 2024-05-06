@@ -31,7 +31,7 @@ export class ContractController {
     }
 
      // http://localhost:3000/contract/filter-by-user/2
-     @Get('filter-by-user/:id')
+     @Get('filter-by-user-id/:id')
      findByUserId(@Param('id', ParseIntPipe) id: number){
          return this.contractRepository.find({
              where: {

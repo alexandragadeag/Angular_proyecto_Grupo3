@@ -48,6 +48,60 @@
         }@else {
         <p>Usuario no encontrado.</p>
       }
-      
+
+      <h2>Listado de contratos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID del contrato</th>
+            <br>
+            <th>Duración del contrato</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (contract of contracts; track contract.id) {
+            <tr>
+              <td>{{contract.id}}</td>
+              <br>
+              <td>{{contract.duration}}</td>
+            </tr>
+          }
+          @empty {
+            <tr>
+              <td colspan="1">No tiene contratos</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+      <br>
+      <br>
+
+      <h2>Listado de facturas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID de la factura</th>
+            <br>
+            <th>Precio de la factura</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (invoice of invoices; track invoice.id) {
+            <tr>
+              <td>{{invoice.id}}</td>
+              <br>
+              <td>{{invoice.totalPrice}} €</td>
+            </tr>
+          }
+          @empty {
+            <tr>
+              <td colspan="1">No tiene facturas</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+
+
       </div>
     </div>
+    <br> <br>

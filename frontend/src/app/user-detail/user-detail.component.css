@@ -24,3 +24,37 @@
     left: 50%; /* Alinea el lado izquierdo de la imagen en la mitad del contenedor */
     transform: translate(-50%, -50%); /* Centra la imagen dentro del contenedor */
   }
+
+   /* Estilos para la tabla */
+   table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px; /* Limita el ancho de la tabla */
+    margin: 20px auto; /* Centra la tabla */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #7e1fcd; /* Color de fondo del encabezado */
+    color: white;
+  }
+
+  /* Estilos para el título */
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+
+  /* Estilos para la fila sin contratos */
+  .empty-row td {
+    text-align: center;
+    font-style: italic;
+  }

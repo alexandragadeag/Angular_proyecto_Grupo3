@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { User } from '../interfaces/user.model';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationService } from '../authentication/authentication.service';
@@ -23,20 +23,30 @@ export class UserDetailComponent {
   contracts: Contract[] | undefined;
 
   constructor(private httpClient: HttpClient, 
-    private authService: AuthenticationService) {
+    private authService: AuthenticationService,
+    private activatedRoute: ActivatedRoute,) {
       this.authService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin);
 
      }
 
   ngOnInit(): void {
-    this.httpClient.get<User>('http://localhost:3000/user/account')
-    .subscribe(usersFromBackend => this.user = usersFromBackend);
+    this.activatedRoute.params.subscribe(params => {
+      const id = params['id'];
+      if(!id) {
+        return; 
+      }
+      this.httpClient.get<User>('http://localhost:3000/user/filter-by-id/'  + id)
+      .subscribe(usersFromBackend => this.user = usersFromBackend);
+      
+      this.httpClient.get<Invoice[]>('http://localhost:3000/invoice/filter-by-user-id/' + id)
+      .subscribe(invoices => this.invoices = invoices);
+      
+      this.httpClient.get<Contract[]>('http://localhost:3000/contract/filter-by-user-id/' + id)
+      .subscribe(contracts => this.contracts = contracts);
+
+    });
+
     
-    this.httpClient.get<Invoice[]>('http://localhost:3000/invoice/filter-by-user/current')
-    .subscribe(invoices => this.invoices = invoices);
-    
-    this.httpClient.get<Contract[]>('http://localhost:3000/contract/filter-by-current-user')
-    .subscribe(contracts => this.contracts = contracts);
   }
 
   
