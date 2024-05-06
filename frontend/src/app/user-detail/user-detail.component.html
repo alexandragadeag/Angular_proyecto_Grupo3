@@ -1,1 +1,53 @@
-<p>user-detail works!</p>
+<div class="container mt-5">
+
+  
+    
+  
+    <div class="row">
+      <div class="col-4 text-center">
+  
+  
+        <div class="contenedor">
+          <img class="img-fluid" src="/assets/img/user-2935527_640.webp">
+  
+        </div>
+  
+
+  
+      </div>
+      <div class="col-8">
+  
+        @if(user){
+        <div class="container px-4 py-5" id="icon-grid">
+          <h2 class="pb-2 border-bottom">Usuario con id {{user.id}}</h2>
+  
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-envelope text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Dirección de email</h3>
+                <p>{{user.email}}</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-telephone text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Teléfono</h3>
+                <p>{{user.phone}}</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-houses text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Dirección</h3>
+                <p>{{user.addressStreet}}</p>
+              </div>
+            </div>
+        </div>
+    </div>
+        }@else {
+        <p>Usuario no encontrado.</p>
+      }
+      
+      </div>
+    </div>

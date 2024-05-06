@@ -1,0 +1,26 @@
+.contenedor {
+    width: 200px; /* Tamaño deseado del cuadrado */
+    height: 300px; /* Tamaño deseado del cuadrado */
+    overflow: hidden; /* Para ocultar partes de la imagen fuera del cuadrado */
+    border: 3px solid black; /* Borde opcional para visualización */
+  }
+
+  
+
+  .contenedor {
+    max-width: 100%; /* El contenedor no será más grande que el ancho de la ventana */
+    width: auto; /* Se ajustará automáticamente según el tamaño del contenedor padre */
+    position: relative; /* Para poder hacer que la imagen ocupe el espacio relativo al contenedor */
+    overflow: hidden; /* Para ocultar partes de la imagen fuera del cuadrado */
+    border: 4px solid black; /* Borde opcional para visualización */
+  }
+
+  .contenedor img {
+    max-width: 100%; /* La imagen no será más grande que el contenedor */
+    height: auto; /* Para mantener la proporción de la imagen */
+    display: block; /* Para eliminar el espacio adicional debajo de la imagen */
+    position: absolute; /* Para hacer que la imagen ocupe el espacio relativo al contenedor */
+    top: 50%; /* Alinea la parte superior de la imagen en la mitad del contenedor */
+    left: 50%; /* Alinea el lado izquierdo de la imagen en la mitad del contenedor */
+    transform: translate(-50%, -50%); /* Centra la imagen dentro del contenedor */
+  }
