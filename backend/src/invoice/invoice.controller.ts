@@ -54,6 +54,19 @@ export class InvoiceController {
         });
     }
 
+    @Get('filter-by-user/current')
+    @UseGuards(AuthGuard('jwt'))
+    findByUser(@Request() request) {
+
+        return this.invoiceRepository.find({
+            where: {
+                user: {
+                    id: request.user.id
+                }
+            }
+        });
+    }
+
 
 }
 
