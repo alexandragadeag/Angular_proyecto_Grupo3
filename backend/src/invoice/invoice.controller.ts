@@ -23,7 +23,7 @@ export class InvoiceController {
     findAll(@Request() request) {
 
         if (request.user.role === Role.ADMIN) {
-            
+            return this.invoiceRepository.find();
         } else {
            console.log(request.user.id);
             return this.invoiceRepository.find({
