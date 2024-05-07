@@ -33,7 +33,9 @@ Una plataforma integral de energía solar desarrollada con Angular, que combina 
 
 
 
- COMANDOS UTILIZADOS:
+# COMANDOS UTILIZADOS
+
+
  Comando angular para el problema de permisos
 sudo chmod -R 777 *
 
